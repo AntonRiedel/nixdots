@@ -1,0 +1,16 @@
+{
+  imports =
+    [ 
+      ./boot.nix
+      ./hardware.nix
+      #<nixos-hardware/lenovo/thinkpad/p14s/amd/gen2>
+      ./filesystem.nix
+      ./networking.nix
+      ./misc.nix
+      ./packages.nix
+      ./gui.nix
+      ./user.nix
+       # <home-manager/nixos>
+    ];
+  system.stateVersion = "23.11";
+}
