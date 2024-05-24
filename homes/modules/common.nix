@@ -5,6 +5,7 @@
     htop
     fd
     ripgrep
+    bat
     trashy
     xdg-utils
     git
