@@ -1,0 +1,16 @@
+session_name: o2
+start_directory: ${ALICE}
+windows:
+  - window_name: jupyter
+    panes:
+      - shell_command:
+          - jupyter lab
+  - window_name: alien
+    panes:
+      - shell_command:
+          - cd ${ALICE}
+          - distrobox enter Alice
+          - alienv enter xjalienfs/latest ROOT/latest --shellrc
+          - cd ${ANALYSIS}
+  - window_name: browser
+  - window_name: local

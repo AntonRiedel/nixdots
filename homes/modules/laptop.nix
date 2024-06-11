@@ -26,19 +26,24 @@
     qrencode
 
     # dev tools
+
     lua51Packages.lua
     lua51Packages.luarocks
+    fswatch
+    nerdfonts
+
     clang
     cmake 
     gnumake
     openssl
     texlab
     nodePackages.bash-language-server
-    nodePackages.pyright
+    # nodePackages.pyright
     clang-tools
     lua-language-server
-    root
+    # root
     ansible
+    # jupyter-all
     # mathematica
 
     # (python3.withPackages (p: with p; [ numpy scipy awkward uproot matplotlib jupyterlab ]))
@@ -78,4 +83,17 @@
 
   # configure kitty
   xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
+
+  home.file = {
+    ".config/tmuxp" = {
+      source = ./tmuxp;
+      recursive = true;
+    };
+  };
+
+  home.sessionVariables = {
+    ALICE = "$HOME/alice";
+    ANALYSIS = "$HOME/nextcloud/PhD/ALICE/analysis";
+  };
+
 }
