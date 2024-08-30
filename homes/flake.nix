@@ -8,7 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -20,9 +19,9 @@
         config = {
           allowUnfree = true;
         };
-      overlay = [
-         inputs.neovim-nightly-overlay.overlay
-      ];
+      # overlay = [
+      #    inputs.neovim-nightly-overlay.overlay
+      # ];
     };
     in {
       homeConfigurations."anton@ruby" = home-manager.lib.homeManagerConfiguration {

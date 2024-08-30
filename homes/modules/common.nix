@@ -6,9 +6,11 @@
     fd
     ripgrep
     bat
-    trashy
+    trash-cli
     xdg-utils
     sshpass
+    zip
+    unzip
   ];
 
   home.shellAliases = {
@@ -32,17 +34,17 @@ nmcli connection up "$(nmcli connection show | cut -d" " -f1 | tail -n +2 | fzf)
 PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 28)\]\h\[$(tput setaf 1)\]]\[$(tput setaf 7)\] \[$(tput setaf 5)\]\w
 > \[$(tput sgr0)\]"
 
-if (env | grep -Fq 'DISTROBOX'); then
-PS1="(Container)$PS1"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+if (env | grep -Fq 'CONTAINER_ID'); then
+	PS1="($CONTAINER_ID)$PS1"
+	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 fi
 '';
 #         initExtra = ''
 # '';
         profileExtra = ''
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-	. ~/.nix-profile/etc/profile.d/nix.sh
-fi
+# if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+# 	. ~/.nix-profile/etc/profile.d/nix.sh
+# fi
 '';
         shellOptions = [ "histappend" "autocd" "extglob" "nocaseglob" ];
 	historyFile = "$HOME/.config/bash_history";
@@ -103,9 +105,9 @@ _comp_options+=(globdots)
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 '';
         profileExtra = ''
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-	. ~/.nix-profile/etc/profile.d/nix.sh
-fi
+# if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+# 	. ~/.nix-profile/etc/profile.d/nix.sh
+# fi
 '';
         syntaxHighlighting.enable =  true;
     };

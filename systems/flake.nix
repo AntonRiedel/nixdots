@@ -2,11 +2,14 @@
   description = "Global flake for system setups";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixos-hardware = { 
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware }: let
+  outputs = { self, nixpkgs, nixos-hardware, ... }: let
     system = "x86_64-linux";
     pkg = import nixpkgs {
       inherit system;
@@ -14,7 +17,7 @@
         allowUnfree = true;
       };
     };
-  in 
+  in
   {
     nixosConfigurations = {
       Ruby = nixpkgs.lib.nixosSystem {
@@ -23,7 +26,6 @@
           ./ruby.nix
           nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
-# ./nixos/configuration.nix
         ];
       };
     };

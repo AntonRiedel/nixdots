@@ -1,9 +1,9 @@
 session_name: o2
-start_directory: ${ALICE}
 windows:
   - window_name: jupyter
     panes:
       - shell_command:
+          - cd ${ANALYSIS}
           - jupyter lab
   - window_name: alien
     panes:
@@ -13,4 +13,8 @@ windows:
           - alienv enter xjalienfs/latest ROOT/latest --shellrc
           - cd ${ANALYSIS}
   - window_name: browser
+      - shell_command:
+          - cd ${ANALYSIS}
   - window_name: local
+      - shell_command:
+          - cd ${ANALYSIS}

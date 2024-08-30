@@ -5,25 +5,8 @@
   services.xserver.xkb.layout = "eu";
   services.xserver.videoDrivers = [ "amdgpu" "displaylink" "modesetting" ];
   services.xserver.displayManager.lightdm.enable=true;
-  services.xserver.windowManager.qtile.enable=true;
-  services.xserver.libinput.enable = true;
-
-  # programs.hyprland = {
-  #   enable = true;
-  #   xwayland.enable = true;
-  # };
-  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  # environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
-  # xdg = {
-  #   portal = {
-  #     enable = true;
-  #     extraPortals = with pkgs; [
-  #       xdg-desktop-portal-wlr
-  #       xdg-desktop-portal-gtk
-  #     ];
-  #   };
-  # };
-  # security.polkit.enable = true;
+  services.xserver.windowManager.qtile.enable = true;
+  services.libinput.enable = true;
 
   # fonts
   fonts.packages = with pkgs; [
@@ -32,6 +15,7 @@
   ];
 
   # sound
+  security.rtkit.enable = true;
   services.pipewire = {
     enable=true;
     pulse.enable=true;

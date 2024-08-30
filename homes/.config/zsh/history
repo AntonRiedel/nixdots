@@ -1,0 +1,122 @@
+: 1718527194:0;sudo dnf update
+: 1718526444:2;home-manager switch --flake ~/nixdots/homes/#anton@ruby --show-trace
+: 1718526763:0;export NIXPKGS_ALLOW_INSECURE=1
+: 1718526767:410;home-manager switch --flake ~/nixdots/homes/#anton@ruby --impure
+: 1718527191:2950;distrobox enter Alice
+: 1719155111:0;ced
+: 1719210194:0;vim modules/laptop.nix 
+: 1719239547:0;cd .
+: 1719327566:0;grep -ir brave
+: 1719327571:0;grep -ir ,
+: 1719327574:0;grep -ir .
+: 1719327583:0;rg brave
+: 1719327587:0;rg gpg
+: 1719401852:0;siojek
+: 1719772633:0;rg amdgpu
+: 1719772641:0;rg hardware
+: 1719772757:13;vim modules/hardware.nix
+: 1719772779:0;sudo nixos-rebuild switch --flake ~/nixdots/systems/#Ruby -vvv
+: 1719772802:0;sudo nixos-rebuild switch --flake ~/nixdots/systems/#Ruby --trace
+: 1719772811:0;sudo nixos-rebuild switch --trace --flake ~/nixdots/systems/#Ruby
+: 1719772816:28;man nixos-rebuild
+: 1719772855:0;git add ..
+: 1719772857:0;git status
+: 1719772871:0;rg hardware.amdgpu
+: 1719772875:0;rg "hardware.amdgpu"
+: 1719772881:0;grep -ir amdgpu
+: 1719772887:0;grep -ir amdgpu .
+: 1719772899:0;grep -ir hardware . | grep gpu
+: 1719772907:0;grep -ir hardware .
+: 1719772967:8;vim modules/configuration.nix
+: 1719772996:0;grep -ir 24
+: 1719772999:0;grep -ir 23 .\ 
+: 1719773000:0;grep -ir 23 .
+: 1719773068:478;sudo nixos-rebuild switch -v --flake ~/nixdots/systems/#Ruby
+: 1719773590:0;vim kta.nix
+: 1719773621:0;vim silver.nix
+: 1719773631:0;grep -ir 23
+: 1719841199:17;vim gui.nix
+: 1719841357:0;which root
+: 1719841369:0;root --web
+: 1720004181:0;nix flake udpate
+: 1720204708:2;sudo nix flake update
+: 1720434250:0;vim modules/
+: 1720434254:0;vim home.nix
+: 1720434285:0;mv home.nix home.nix.weg
+: 1720434292:0;vim ruby.nix
+: 1720507369:0;rg clang
+: 1720507406:0;ll $(which cc)
+: 1720507412:0;cc
+: 1720507415:0;cc --version
+: 1720507649:0;rg quteb
+: 1720507721:0;which cc
+: 1720507722:0;which clang
+: 1720507840:0;vim test.cpp
+: 1720507847:0;vim test.norg
+: 1720686163:0;which ls
+: 1720686990:0;nix-store -gc
+: 1720686993:0;nix-store --gc
+: 1720687000:0;sudo nix-store --gc
+: 1720687071:0;nix-store --optimize
+: 1720687113:0;sudo nix-store --optimize
+: 1720784982:0;nextcould
+: 1720784994:0;nix shell -p nextcould-client
+: 1721147979:0;nix flake show
+: 1721915945:0;trash list
+: 1721915978:0;trash put
+: 1721915985:0;which trash
+: 1721915987:0;man trash
+: 1721916001:0;trash-put
+: 1722203869:0;s
+: 1722252450:0;grep -ir xsel
+: 1722252453:0;grep -ir xclip
+: 1722252508:0;r
+: 1722253059:0;cd /home/anton/.local/share/nvim/site/pack/luarocks/opt/tree-sitter-bash/parser/bash.so\
+
+: 1722253063:0;cd /home/anton/.local/share/nvim/site/pack/luarocks/opt/tree-sitter-bash/parser/
+: 1722253247:0;which nivm
+: 1722253249:0;nvim
+: 1722253381:0;nix-store --delete /nix/store/dj8fvg67c30zhr3m97ykqc6jrg8y10ba-neovim-unwrapped-0.10.1/lib/nvim/parser/c.so
+: 1722253398:0;nix-store --delete /nix/store/dj8fvg67c30zhr3m97ykqc6jrg8y10ba-neovim-unwrapped-0.10.1/lib/nvim/parser/bash.so
+: 1722253477:0;nix-collect-garbage -d
+: 1722253568:0;nix-store --query --roots /nix/store/dj8fvg67c30zhr3m97ykqc6jrg8y10ba-neovim-unwrapped-0.10.1/lib/nvim/parser/c.so
+: 1722265058:0;root
+: 1722450774:3;vim flake.nix i
+: 1722450778:16;vim flake.nix 
+: 1722450909:16;sudo nix-collect-garbage -d
+: 1722451550:0;pulsemixer
+: 1723622334:0;exit
+: 1723707242:0;cd systems
+: 1723707892:0;vim flake.nix
+: 1723707907:0;grep -ir nixvim .
+: 1723708320:0;nix log /nix/store/r35rzsrwg11lg27znn62yhl2pjwyfvp4-home-manager-path.drv
+: 1723708335:0;which lua
+: 1723708340:0;which luarocks
+: 1723708349:0;nvim -u NORC -c "source https://raw.githubusercontent.com/nvim-neorocks/rocks.nvim/master/installer.lua"
+: 1724014288:0;python
+: 1724014293:0;python3
+: 1724560335:0;nmf
+: 1724560338:0;sshc
+: 1724656801:0;grep -ir flame
+: 1724656807:0;vim 
+: 1724656832:0;home-manager switch --flake ~/nixdots/homes/#anton@ruby --show-trace 
+: 1724656873:0;man flameshot
+: 1724667162:0;cd
+: 1724691887:0;grep -ir qtile
+: 1724921384:10;vim laptop.nix
+: 1724922393:124;vim config.py
+: 1724932138:0;cd modules
+: 1724932139:0;cd qtile
+: 1724932227:2;vim autostart.sh
+: 1724932954:0;vim
+: 1724933614:0;..
+: 1724933710:0;nitrogen
+: 1724934057:0;vi
+: 1725020619:0;clear
+: 1725020659:24;sudo nixos-rebuild switch --flake ~/nixdots/systems/#Ruby
+: 1725020685:0;cd ..
+: 1725020685:0;ls
+: 1725020687:0;cd homes
+: 1725020698:0;nix flak update
+: 1725020712:0;nix flake update
+: 1725020723:0;home-manager switch --flake ~/nixdots/homes/#anton@ruby

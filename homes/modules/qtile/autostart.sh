@@ -7,8 +7,9 @@
 xset -dpms
 xset r rate 300 50
 
+nitrogen --restore &>/dev/null
+
 # prepare screenlocker
 light-locker & disown
 flameshot & disown
-#xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 & disown
-xcompmgr & disown
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 & disown

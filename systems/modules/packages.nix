@@ -11,37 +11,39 @@
   # hardware
   lm_sensors
   brightnessctl
-  # texlive.combined.scheme-full
-  # python3Packages.pygments
-
-  # gui
-  xorg.xhost
-  lightlocker
-  flameshot
-  # qtile
-  xcompmgr
-  zoom-us
-  # xdg-desktop-portal-hyprland
-  # gnome.adwaita-icon-theme
-
-  # misc
-  alacritty
-  kitty
-
-  vim
-  unzip
-  git
-  wget
   acpid
+  acpi
   pciutils
 
-  # password manager
-  # pass
-  # passff-host
-  # passExtensions.pass-otp
-  # gnupg
-  # pinentry-qt
-  
+  # gui (wayland)
+  #waybar
+  #hyprpaper
+  #hyprlock
+  #kanshi
+  #hyprshot
+  #wofi
+  #wl-clipboard
+  #dmenu-wayland
+  #libsForQt5.qt5.qtwayland
+  #kdePackages.qtwayland
+
+  # gui (x11)
+  dunst
+  upower
+  lightlocker
+  arandr
+  xcompmgr
+  autorandr
+  nitrogen
+
+  # misc
+  kitty
+  nextcloud-client
+  pwvucontrol
+  zoom-us
+
+  # minimal cli for root user
+  vim
 
   # virtualization
   virt-manager

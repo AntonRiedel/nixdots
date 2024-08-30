@@ -6,6 +6,7 @@ import subprocess, os
 mod = "mod4"
 terminal = "kitty"
 browser = "firefox"
+browser2 = "chromium"
 pwdPicker = "passmenu"
 vncviewer = "vncviewer"
 
@@ -28,7 +29,8 @@ keys = [
 
     Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "g", lazy.spawn(pwdPicker)),
-    Key([mod], "b", lazy.spawn(browser)),
+    Key([mod], "w", lazy.spawn(browser)),
+    Key([mod, "shift"], "w", lazy.spawn(browser2)),
     Key([mod], "v", lazy.spawn(vncviewer)),
     Key([mod], "p", lazy.spawn('pulsemixer --change-volume +10')),
     Key([mod,"shift"], "p", lazy.spawn('pulsemixer --change-volume -10')),
@@ -162,7 +164,7 @@ wl_input_rules = None
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/Dotfiles/qtile/.config/qtile/autostart.sh')
-    subprocess.Popen([home], shell=True)
+    subprocess.run(home)
 
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this

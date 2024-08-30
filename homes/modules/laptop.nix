@@ -6,42 +6,47 @@
     # general tools
     firefox 
     chromium
+    # brave
     passff-host
     thunderbird
     mattermost-desktop
     remmina
     newsboat
     sxiv
-    nextcloud-client
-    arandr
+    # nextcloud-client
     tigervnc
+    flameshot
     scrcpy
     zathura
+    sioyek
     kdePackages.okular
     pcmanfm
-    qutebrowser
+    # qutebrowser
     libreoffice
     pulsemixer
     imagemagick
     qrencode
+    stylua
 
     # dev tools
 
-    lua51Packages.lua
-    lua51Packages.luarocks
+    # lua
+    luajit
+    luajitPackages.luarocks
     fswatch
     nerdfonts
 
     clang
+    libcxxStdenv
     cmake 
     gnumake
     openssl
     texlab
-    nodePackages.bash-language-server
+    # nodePackages.bash-language-server
     # nodePackages.pyright
     clang-tools
     lua-language-server
-    # root
+    root
     ansible
     # jupyter-all
     # mathematica
@@ -64,6 +69,9 @@
       enable = true;
       userEmail = "anton.riedel@cern.ch";
       userName = "Anton Riedel";
+      extraConfig = {
+      	credential.helper = "store";
+      };
     };
   };
 
