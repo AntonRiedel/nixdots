@@ -20,7 +20,6 @@
 : 1719772811:0;sudo nixos-rebuild switch --trace --flake ~/nixdots/systems/#Ruby
 : 1719772816:28;man nixos-rebuild
 : 1719772855:0;git add ..
-: 1719772857:0;git status
 : 1719772871:0;rg hardware.amdgpu
 : 1719772875:0;rg "hardware.amdgpu"
 : 1719772881:0;grep -ir amdgpu
@@ -78,15 +77,11 @@
 : 1722253249:0;nvim
 : 1722253381:0;nix-store --delete /nix/store/dj8fvg67c30zhr3m97ykqc6jrg8y10ba-neovim-unwrapped-0.10.1/lib/nvim/parser/c.so
 : 1722253398:0;nix-store --delete /nix/store/dj8fvg67c30zhr3m97ykqc6jrg8y10ba-neovim-unwrapped-0.10.1/lib/nvim/parser/bash.so
-: 1722253477:0;nix-collect-garbage -d
 : 1722253568:0;nix-store --query --roots /nix/store/dj8fvg67c30zhr3m97ykqc6jrg8y10ba-neovim-unwrapped-0.10.1/lib/nvim/parser/c.so
 : 1722265058:0;root
 : 1722450774:3;vim flake.nix i
 : 1722450778:16;vim flake.nix 
-: 1722450909:16;sudo nix-collect-garbage -d
 : 1722451550:0;pulsemixer
-: 1723622334:0;exit
-: 1723707242:0;cd systems
 : 1723707892:0;vim flake.nix
 : 1723707907:0;grep -ir nixvim .
 : 1723708320:0;nix log /nix/store/r35rzsrwg11lg27znn62yhl2pjwyfvp4-home-manager-path.drv
@@ -101,7 +96,6 @@
 : 1724656807:0;vim 
 : 1724656832:0;home-manager switch --flake ~/nixdots/homes/#anton@ruby --show-trace 
 : 1724656873:0;man flameshot
-: 1724667162:0;cd
 : 1724691887:0;grep -ir qtile
 : 1724921384:10;vim laptop.nix
 : 1724922393:124;vim config.py
@@ -109,14 +103,35 @@
 : 1724932139:0;cd qtile
 : 1724932227:2;vim autostart.sh
 : 1724932954:0;vim
-: 1724933614:0;..
 : 1724933710:0;nitrogen
-: 1724934057:0;vi
-: 1725020619:0;clear
-: 1725020659:24;sudo nixos-rebuild switch --flake ~/nixdots/systems/#Ruby
-: 1725020685:0;cd ..
-: 1725020685:0;ls
-: 1725020687:0;cd homes
 : 1725020698:0;nix flak update
-: 1725020712:0;nix flake update
-: 1725020723:0;home-manager switch --flake ~/nixdots/homes/#anton@ruby
+: 1725037607:0;ls homes
+: 1725037610:16;git log
+: 1725037632:0;git reset --hard HEAD
+: 1725037637:0;ls modules
+: 1725037640:0;ls homes/modules
+: 1725037645:0;rmdir homes/modules
+: 1725037648:0;rmdir homes
+: 1725037653:0;rm -rf homes.bak
+: 1725037687:31;nix run home-manager/master -- init --switch
+: 1725198213:0;cd ..
+: 1725198214:0;cd systems
+: 1725198220:0;git status
+: 1725198224:26;vi
+: 1725198567:92;sudo nixos-rebuild switch --flake ~/nixdots/systems/#Ruby
+: 1725199038:0;..
+: 1725199039:0;cd homes
+: 1725647094:0;cd
+: 1726234906:0;clear
+: 1726682156:0;nix flake update
+: 1726682193:0;home-manager switch --flake ~/nixdots/homes/#anton@ruby
+: 1726682296:0;nix-collect-garbage -d
+: 1726682347:0;sudo nix-collect-garbage -d
+: 1726682371:0;ls
+: 1726682373:0;exit
+: 1727216579:0;ls
+: 1727216581:0;cd modules
+: 1727217346:0;ls
+: 1727217353:0;grep -ir git .
+: 1727217372:0;ls
+: 1727217373:0;cd modules

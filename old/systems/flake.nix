@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixos-hardware = { 
-      url = "github:NixOS/nixos-hardware/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = { self, nixpkgs, nixos-hardware, ... }: let

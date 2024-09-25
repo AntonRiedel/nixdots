@@ -1,0 +1,30 @@
+-- global options
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.o.hlsearch = false
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+-- vim.o.wildmode = "list:longest,list:full"
+vim.o.laststatus = 3
+vim.o.mouse = "a"
+vim.o.clipboard = "unnamedplus"
+vim.o.breakindent = true
+vim.o.undofile = true
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.inccommand = "split"
+vim.wo.signcolumn = "yes"
+vim.o.updatetime = 250
+vim.o.writebackup = false
+vim.o.lazyredraw = true
+vim.o.timeoutlen = 300
+vim.o.completeopt = "menuone,noselect"
+vim.o.termguicolors = true
+vim.lsp.set_log_level("OFF")
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
