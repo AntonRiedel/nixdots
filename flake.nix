@@ -45,7 +45,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-	      home-manager.backupFileExtension = "bak";
+              home-manager.backupFileExtension = "bak";
               home-manager.extraSpecialArgs = {
                 inherit system pkgs pkgs-unstable;
               };
@@ -63,7 +63,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-	      home-manager.backupFileExtension = "bak";
+              home-manager.backupFileExtension = "bak";
               home-manager.extraSpecialArgs = {
                 inherit system pkgs pkgs-unstable;
               };
@@ -71,6 +71,10 @@
             }
           ];
         };
+      };
+      homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./systems/silver/silver.nix ];
       };
     };
 }
