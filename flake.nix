@@ -74,6 +74,9 @@
       };
       homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {
+          inherit pkgs pkgs-unstable;
+        };
         modules = [ ./systems/silver/silver.nix ];
       };
     };
