@@ -21,5 +21,7 @@
     pcmanfm
     libreoffice
     imagemagick
+    arandr
+    autorandr
   ];
 }
