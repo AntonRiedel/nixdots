@@ -10,6 +10,7 @@
     sshpass
     zip
     unzip
+    stow
     stylua
     gnumake
     cmake
