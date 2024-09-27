@@ -45,6 +45,19 @@
           };
         }
         {
+          contentSuffix = "private";
+          condition = "gitdir:~/Secfiles/";
+          contents = {
+            user = {
+              name = "Anton Riedel";
+              email = "anton.riedel@tum.de";
+            };
+            core = {
+              sshCommand = "ssh -i ~/.ssh/key/crystal";
+            };
+          };
+        }
+        {
           contentSuffix = "admin";
           condition = "gitdir:~/admin/";
           contents = {
