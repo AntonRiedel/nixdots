@@ -15,6 +15,7 @@
     ../../home-modules/shell/alias.nix
     ../../home-modules/shell/bash.nix
     ../../home-modules/git/git.nix
+    ../../home-modules/fzf/fzf.nix
     ../../home-modules/neovim/neovim.nix
   ];
 

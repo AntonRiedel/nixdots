@@ -4,7 +4,6 @@
     htop
     fd
     ripgrep
-    bat
     trash-cli
     xdg-utils
     sshpass
@@ -12,8 +11,6 @@
     unzip
     stow
     stylua
-    gnumake
-    cmake
     xclip
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     pyright
@@ -24,7 +21,6 @@
     nixfmt-rfc-style
     black
     clang-tools
-    clang
     texlab
     nodePackages.bash-language-server
     nixd

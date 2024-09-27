@@ -4,6 +4,12 @@
     git = {
       enable = true;
       delta.enable = true;
+      extraConfig = {
+        user = {
+          name = "Anton Riedel";
+          email = "anton.riedel@tum.de";
+        };
+      };
       includes = [
         {
           contentSuffix = "o2";
