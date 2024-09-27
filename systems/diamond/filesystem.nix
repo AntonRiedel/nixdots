@@ -29,6 +29,14 @@
       "compress=zstd"
     ];
   };
+  fileSystems."/steam" = {
+    label = "SCRATCH";
+    fsType = "btrfs";
+    options = [
+      "subvol=@steam"
+      "compress=zstd"
+    ];
+  };
 
   fileSystems."/boot" = {
     label = "UEFI";
