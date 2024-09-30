@@ -15,6 +15,8 @@
       ../../home-modules/shell/alias.nix
       ../../home-modules/packages/cli-packages.nix
       ../../home-modules/neovim/neovim.nix
+      ../../home-modules/tmux/tmux.nix
+      ../../home-modules/fzf/fzf.nix
       ../../home-modules/git/git.nix
     ];
 
