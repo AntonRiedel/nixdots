@@ -37,7 +37,7 @@
       nixosConfigurations = {
         diamond = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit system;
+            inherit system pkgs pkgs-unstable;
           };
           modules = [
             ./systems/diamond/diamond.nix
@@ -55,7 +55,7 @@
         };
         ruby = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit system;
+            inherit system pkgs pkgs-unstable;
           };
           modules = [
             ./systems/ruby/ruby.nix

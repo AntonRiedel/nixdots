@@ -1,23 +1,18 @@
+{ pkgs, ... }:
 {
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   imports = [
-      ./hardware.nix
-      ./boot.nix
-      ./filesystem.nix
-      ./networking.nix
-      ./user.nix
-      ./misc.nix
+    ./hardware.nix
+    ./boot.nix
+    ./filesystem.nix
+    ./networking.nix
+    ./user.nix
+    ./misc.nix
 
-     # common modules
-     ../../system-modules/qtile/qtile.nix
-     ../../system-modules/packages/packages.nix
-     ../../system-modules/dual-function-keys/dual-function-keys.nix
-     ../../system-modules/virtualization/virtualization.nix
+    # common modules
+    ../../system-modules/qtile/qtile-withDisplaylink.nix
+    ../../system-modules/packages/packages.nix
+    ../../system-modules/dual-function-keys/dual-function-keys.nix
+    ../../system-modules/virtualization/virtualization.nix
   ];
 
   environment.systemPackages = with pkgs; [

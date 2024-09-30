@@ -8,7 +8,6 @@
       ./filesystem.nix
       ./networking.nix
       ./user.nix
-      #./gui.nix
       ./misc.nix
 
      # common modules
