@@ -6,10 +6,12 @@
     pulsemixer
     firefox
     chromium
+    zoom-us
 
     passff-host
     thunderbird
     mattermost-desktop
+    nextcloud-client
     remmina
     newsboat
     sxiv
