@@ -1,11 +1,15 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 {
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # Enable the GNOME desktop environment
+  # it uses wayland by default even though it is defined under xserver
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # disable pulseaudio explicitly
+  hardware.pulseaudio.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
