@@ -72,6 +72,26 @@
           ];
         };
       };
+
+      sapphire = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit system pkgs pkgs-unstable;
+        };
+        modules = [
+          ./systems/sapphire/sapphire.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "bak";
+            home-manager.extraSpecialArgs = {
+              inherit system pkgs pkgs-unstable;
+            };
+            home-manager.users.anton = import ./systems/sapphire/home.nix;
+          }
+        ];
+      };
+
       homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
