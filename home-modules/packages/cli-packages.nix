@@ -22,6 +22,7 @@
     black
     clang-tools
     texlab
+    ltex-ls
     nodePackages.bash-language-server
     nixd
     root
