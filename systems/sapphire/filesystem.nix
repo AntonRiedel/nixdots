@@ -40,9 +40,5 @@
     ];
   };
 
-  # fileSystems."swap" = {
-  #   label = "SWAP";
-  #   fsType = "swap";
-  # };
   swapDevices = [ { label = "SWAP"; } ];
 }
