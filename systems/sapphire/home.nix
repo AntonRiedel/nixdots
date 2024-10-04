@@ -10,6 +10,7 @@
     # common modules
     ../../home-modules/packages/cli-packages.nix
     ../../home-modules/packages/gui-packages.nix
+    ../../home-modules/kitty/kitty.nix
     ../../home-modules/shell/alias.nix
     ../../home-modules/shell/bash.nix
     ../../home-modules/git/git.nix
