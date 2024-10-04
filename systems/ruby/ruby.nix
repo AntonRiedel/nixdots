@@ -9,7 +9,7 @@
     ./misc.nix
 
     # common modules
-    ../../system-modules/qtile/qtile.nix
+    ../../system-modules/gui/qtile.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
     ../../system-modules/virtualization/virtualization.nix

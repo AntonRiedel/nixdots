@@ -1,22 +1,21 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 {
-  imports =
-    [ 
+  imports = [
     # system specific includes
-      ./hardware.nix
-      ./boot.nix
-      ./filesystem.nix
-      ./networking.nix
-      ./user.nix
-      ./misc.nix
+    ./hardware.nix
+    ./boot.nix
+    ./filesystem.nix
+    ./networking.nix
+    ./user.nix
+    ./misc.nix
 
-     # common modules
-     ../../system-modules/qtile/qtile.nix
-     ../../system-modules/packages/packages.nix
-     ../../system-modules/packages/extra-packages.nix
-     ../../system-modules/dual-function-keys/dual-function-keys.nix
-     ../../system-modules/virtualization/virtualization.nix
-    ];
+    # common modules
+    ../../system-modules/gui/qtile.nix
+    ../../system-modules/packages/packages.nix
+    ../../system-modules/packages/extra-packages.nix
+    ../../system-modules/dual-function-keys/dual-function-keys.nix
+    ../../system-modules/virtualization/virtualization.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
   nix.extraOptions = "experimental-features = nix-command flakes";
