@@ -1,0 +1,27 @@
+session_name: O2
+start_directory: ${ALICE}
+windows:
+  - window_name: dev
+    panes:
+      - shell_command:
+          - cd O2
+          - clear
+          - nvim
+  - window_name: build
+    panes:
+      - shell_command:
+          - alienv enter O2/latest CMake/latest ninja/latest --shellrc
+          - cd sw/BUILD/O2-latest/O2
+          - while sleep 0.1; do find ${ALICE}/O2/ | entr -pc ninja install -j$(nproc); done
+  - window_name: env
+    panes:
+      - shell_command:
+          - sleep 10s
+          - alienv enter O2/latest --shellrc
+          - cd
+          - clear
+  - window_name: local
+    panes:
+      - shell_command:
+          - cd
+          - clear

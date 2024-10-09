@@ -23,6 +23,7 @@
     clang-tools
     texlab
     ltex-ls
+    perl538Packages.LatexIndent
     nodePackages.bash-language-server
     nixd
     root

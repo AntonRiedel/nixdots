@@ -36,10 +36,10 @@
       '';
     };
   };
-  # home.file = {
-  #   ".config/tmuxp" = {
-  #     source = ./tmuxp;
-  #     recursive = true;
-  #   };
-  # };
+  home.file = {
+    ".config/tmuxp" = {
+      source = ./tmuxp;
+      recursive = true;
+    };
+  };
 }
