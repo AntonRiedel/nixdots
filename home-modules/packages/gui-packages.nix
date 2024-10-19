@@ -1,29 +1,31 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
-  home.packages = with pkgs; [
-    kitty
-    pavucontrol
-    pulsemixer
-    firefox
-    chromium
-    zoom-us
+  home.packages = [
+    pkgs.firefox
+    pkgs.kitty
+    pkgs.pavucontrol
+    pkgs.pulsemixer
+    pkgs.chromium
+    pkgs.zoom-us
 
-    passff-host
-    thunderbird
-    mattermost-desktop
-    nextcloud-client
-    remmina
-    newsboat
-    sxiv
+    pkgs.passff-host
+    pkgs.thunderbird
+    pkgs.mattermost-desktop
+    pkgs.nextcloud-client
+    pkgs.remmina
+    pkgs.newsboat
+    pkgs.sxiv
 
-    tigervnc
-    scrcpy
-    zathura
-    kdePackages.okular
-    pcmanfm
-    libreoffice
-    imagemagick
-    arandr
-    autorandr
+    pkgs.tigervnc
+    pkgs.scrcpy
+    pkgs.zathura
+    pkgs.kdePackages.okular
+    pkgs.pcmanfm
+    pkgs.libreoffice
+    pkgs.imagemagick
+    pkgs.arandr
+    pkgs.autorandr
+
   ];
+
 }

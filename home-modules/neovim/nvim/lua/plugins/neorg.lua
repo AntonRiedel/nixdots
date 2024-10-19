@@ -9,9 +9,10 @@ return {
 				["core.dirman"] = {
 					config = {
 						workspaces = {
-							notes = "~/nextcloud/notes",
+							work = "~/nextcloud/notes/work",
+							private = "~/nextcloud/notes/private",
 						},
-						default_workspace = "notes",
+						default_workspace = "work",
 					},
 				},
 			},
