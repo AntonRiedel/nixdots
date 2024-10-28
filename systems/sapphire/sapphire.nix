@@ -18,7 +18,7 @@
     ../../system-modules/gui/gnome.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
-    ../../system-modules/virtualization/virtualization.nix
+    ../../system-modules/auto-cpufreq/auto-cpufreq.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
