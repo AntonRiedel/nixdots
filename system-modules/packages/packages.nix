@@ -1,19 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     # minmal packages for root user
-    neovim
-    git
-    curl
-    wget
-    openssh
+    pkgs.neovim
+    pkgs.git
+    pkgs.curl
+    pkgs.wget
+    pkgs.openssh
 
     # hardware
-    lm_sensors
-    brightnessctl
-    acpid
-    acpi
-    pciutils
+    pkgs.lm_sensors
+    pkgs.brightnessctl
+    pkgs.acpid
+    pkgs.acpi
+    pkgs.pciutils
+
+    # dev tools
+    pkgs-unstable.devenv
   ];
   programs.adb.enable = true;
   programs.dconf.enable = true;
