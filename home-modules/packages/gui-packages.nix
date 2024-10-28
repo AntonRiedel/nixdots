@@ -25,7 +25,7 @@
     pkgs.imagemagick
     pkgs.arandr
     pkgs.autorandr
-
+    pkgs.xournalpp
   ];
 
 }

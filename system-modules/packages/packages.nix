@@ -14,6 +14,7 @@
     pkgs.acpid
     pkgs.acpi
     pkgs.pciutils
+    pkgs.iio-sensor-proxy
 
     # dev tools
     pkgs-unstable.devenv
