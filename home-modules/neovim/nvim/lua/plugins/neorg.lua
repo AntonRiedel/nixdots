@@ -1,11 +1,11 @@
 return {
 	"nvim-neorg/neorg",
-	ft = "norg",
 	config = function()
 		require("neorg").setup({
 			load = {
 				["core.defaults"] = {},
-				["core.concealer"] = {},
+				["core.completion"] = { config = { engine = "nvim-cmp", name = "[Neorg]" } },
+				["core.concealer"] = { config = { icon_preset = "diamond" } },
 				["core.dirman"] = {
 					config = {
 						workspaces = {

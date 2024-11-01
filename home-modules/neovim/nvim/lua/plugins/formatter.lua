@@ -13,6 +13,9 @@ return {
 				latex = {
 					require("formatter.filetypes.lua").latexindent,
 				},
+				tex = {
+					require("formatter.filetypes.lua").latexindent,
+				},
 				c = {
 					require("formatter.filetypes.c").clangformat,
 				},
