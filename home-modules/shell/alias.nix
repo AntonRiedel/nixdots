@@ -6,7 +6,7 @@
     tt = "trash put";
     tr = "trash list | fzf --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs trash restore --match=exact --force";
     sshc = ''
-      ssh "$(grep -r "^Host " $HOME/.ssh/config.d | grep -v "git\|\*" | awk '{print $2}' | fzf --prompt="Connect to host: ")"
+      ssh "$(grep -r "^Host " $HOME/.ssh/config.d | grep -v "git\|\*" | uniq | awk '{print $2}' | fzf --prompt="Connect to host: ")"
     '';
     rr = "rsync -auhcz --partial --info=progress2";
     nmf = ''
