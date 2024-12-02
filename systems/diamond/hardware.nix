@@ -8,12 +8,6 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   security.rtkit.enable = true;
