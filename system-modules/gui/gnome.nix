@@ -8,13 +8,12 @@
     desktopManager.gnome.enable = true;
   };
 
-  environment.gnome.excludePackages =
-    (with pkgs; [
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
       gnome-photos
       gnome-tour
       gedit
-    ])
-    ++ (with pkgs.gnome; [
       cheese # webcam tool
       gnome-music
       epiphany # web browser
@@ -25,7 +24,8 @@
       iagno # go game
       hitori # sudoku game
       atomix # puzzle game
-    ]);
+    ]
+  );
 
   # disable pulseaudio explicitly
   hardware.pulseaudio.enable = false;
