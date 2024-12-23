@@ -18,7 +18,11 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.extraOptions = "experimental-features = nix-command flakes";
+
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+    trusted-users = root anton
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

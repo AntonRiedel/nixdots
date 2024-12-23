@@ -18,24 +18,23 @@ keys = [
     Key([mod], "h", lazy.layout.shrink()),
     Key([mod], "l", lazy.layout.grow()),
     Key([mod], "Tab", lazy.next_layout()),
-    Key([mod,"shift"], "c", lazy.window.kill()),
+    Key([mod, "shift"], "c", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.reload_config()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
     Key([mod], "space", lazy.window.toggle_floating()),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], 'period', lazy.next_screen()),
-    Key([mod], 'comma', lazy.prev_screen()),
-
+    Key([mod], "period", lazy.next_screen()),
+    Key([mod], "comma", lazy.prev_screen()),
     Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "g", lazy.spawn(pwdPicker)),
     Key([mod], "w", lazy.spawn(browser)),
     Key([mod, "shift"], "w", lazy.spawn(browser2)),
     Key([mod], "v", lazy.spawn(vncviewer)),
-    Key([mod], "p", lazy.spawn('pulsemixer --change-volume +10')),
-    Key([mod,"shift"], "p", lazy.spawn('pulsemixer --change-volume -10')),
-    Key([mod], "m", lazy.spawn('pulsemixer --toggle-mute')),
-    Key([mod,"shift"], "l", lazy.spawn('light-locker-command -l'))
+    Key([mod], "p", lazy.spawn("pulsemixer --change-volume +10")),
+    Key([mod, "shift"], "p", lazy.spawn("pulsemixer --change-volume -10")),
+    Key([mod], "m", lazy.spawn("pulsemixer --toggle-mute")),
+    Key([mod, "shift"], "l", lazy.spawn("light-locker-command -l")),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -44,13 +43,13 @@ for i in groups:
     keys.extend(
         [
             # mod1 + letter of group = switch to group
-            Key([mod],i.name,lazy.group[i.name].toscreen()),
-            Key([mod, "shift"], i.name, lazy.window.togroup(i.name))
+            Key([mod], i.name, lazy.group[i.name].toscreen()),
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
         ]
     )
 
 layouts = [
-    layout.MonadTall(ratio=0.55,single_border_width=0,new_client_position="top"),
+    layout.MonadTall(ratio=0.55, single_border_width=0, new_client_position="top"),
     layout.Max(),
 ]
 
@@ -61,49 +60,52 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-def getMonitors():
-    output = subprocess.check_output(["xrandr","-q"]).decode("utf-8")
-    monitors = []
-    for line in output.splitlines():
-        if "connected" in line:
-            monitor = line.split()[0]
-            monitors.append(monitor)
-    return monitors
+# def getMonitors():
+#     output = subprocess.check_output(["xrandr","-q"]).decode("utf-8")
+#     monitors = []
+#     for line in output.splitlines():
+#         if "connected" in line:
+#             monitor = line.split()[0]
+#             monitors.append(monitor)
+#     return monitors
 
 screens = []
 Flag = True
-for monitor in getMonitors():
+for monitor in [1]:
     MyWidgets = [
-                widget.CurrentScreen(),
-                widget.CurrentLayoutIcon(),
-                widget.GroupBox(),
-            ]
+        widget.CurrentScreen(),
+        widget.CurrentLayoutIcon(),
+        widget.GroupBox(),
+    ]
     if Flag:
-        MyWidgets.extend([
+        MyWidgets.extend(
+            [
                 widget.Sep(),
                 widget.Prompt(),
                 widget.Sep(),
                 widget.WindowName(),
-                #widget.TextBox(fmt="NET"),
-                #widget.NetGraph(frequency=5),
-                #widget.Sep(),
-                #widget.TextBox(fmt="CPU"),
-                #widget.CPUGraph(frequency=5),
+                # widget.TextBox(fmt="NET"),
+                # widget.NetGraph(frequency=5),
+                # widget.Sep(),
+                # widget.TextBox(fmt="CPU"),
+                # widget.CPUGraph(frequency=5),
                 widget.Sep(),
                 widget.TextBox(fmt="🔊"),
                 widget.PulseVolume(),
                 widget.Sep(),
                 widget.TextBox(fmt="🧠"),
-                widget.Memory(measure_mem='G'),
+                widget.Memory(measure_mem="G"),
                 widget.Sep(),
                 widget.TextBox(fmt="🔋"),
                 widget.Battery(format="{char}{percent:2.0%} {hour:d}:{min:02d}"),
                 widget.Sep(),
                 widget.Clock(format="%H:%M (%a) %d.%m.%Y"),
-                widget.Systray()
-        ])
+                widget.Systray(),
+            ]
+        )
         Flag = False
     screens.append(Screen(top=bar.Bar(MyWidgets, 24)))
+
 
 @lazy.function
 def window_to_previous_screen(qtile, switch_group=False):
@@ -112,6 +114,7 @@ def window_to_previous_screen(qtile, switch_group=False):
         group = qtile.screens[i - 1].group.name
         qtile.current_window.togroup(group, switch_group)
 
+
 @lazy.function
 def window_to_next_screen(qtile, switch_group=False):
     i = qtile.screens.index(qtile.current_screen)
@@ -119,17 +122,27 @@ def window_to_next_screen(qtile, switch_group=False):
         group = qtile.screens[i + 1].group.name
         qtile.current_window.togroup(group, switch_group)
 
-keys.extend([
-    Key([mod,"shift"],"comma",window_to_next_screen(switch_group=False)),
-    Key([mod,"shift"],"period",window_to_previous_screen(switch_group=False)),
-    # Key([mod,"control"],"comma",window_to_next_screen(switch_group=True)),
-    # Key([mod,"control"],"period",window_to_previous_screen(switch_group=True)),
-])
+
+keys.extend(
+    [
+        Key([mod, "shift"], "comma", window_to_next_screen(switch_group=False)),
+        Key([mod, "shift"], "period", window_to_previous_screen(switch_group=False)),
+        # Key([mod,"control"],"comma",window_to_next_screen(switch_group=True)),
+        # Key([mod,"control"],"period",window_to_previous_screen(switch_group=True)),
+    ]
+)
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+    ),
+    Drag(
+        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -161,9 +174,10 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
 
+
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run(home)
 
 
