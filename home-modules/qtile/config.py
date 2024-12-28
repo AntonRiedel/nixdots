@@ -1,14 +1,19 @@
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from libqtile.backend.wayland import InputConfig
 import subprocess, os
 
 mod = "mod4"
+
 terminal = "kitty"
 browser = "firefox"
 browser2 = "chromium"
-pwdPicker = "passmenu"
+browser3 = "qutebrowser"
+pwdPicker = "keepmenu -C"
 vncviewer = "vncviewer"
+dmenu = "rofi -show run"
+wallpaper = "~/nextcloud/wallpaper.png"
 
 keys = [
     Key([mod], "j", lazy.layout.next()),
@@ -21,7 +26,8 @@ keys = [
     Key([mod, "shift"], "c", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.reload_config()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "r", lazy.spawncmd()),
+    # Key([mod], "r", lazy.spawncmd()),
+    Key([mod], "r", lazy.spawn(dmenu)),
     Key([mod], "space", lazy.window.toggle_floating()),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "period", lazy.next_screen()),
@@ -30,6 +36,7 @@ keys = [
     Key([mod], "g", lazy.spawn(pwdPicker)),
     Key([mod], "w", lazy.spawn(browser)),
     Key([mod, "shift"], "w", lazy.spawn(browser2)),
+    Key([mod, "control"], "w", lazy.spawn(browser3)),
     Key([mod], "v", lazy.spawn(vncviewer)),
     Key([mod], "p", lazy.spawn("pulsemixer --change-volume +10")),
     Key([mod, "shift"], "p", lazy.spawn("pulsemixer --change-volume -10")),
@@ -104,7 +111,9 @@ for monitor in [1]:
             ]
         )
         Flag = False
-    screens.append(Screen(top=bar.Bar(MyWidgets, 24)))
+    screens.append(
+        Screen(top=bar.Bar(MyWidgets, 24), wallpaper=wallpaper, wallpaper_mode="fill")
+    )
 
 
 @lazy.function
@@ -172,7 +181,11 @@ reconfigure_screens = True
 auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
-wl_input_rules = None
+wl_input_rules = {
+    # "type:keyboard": InputConfig(kb_layout="eu")
+    "type:keyboard": InputConfig(kb_layout="eu", kb_repeat_rate=50)
+    # "type:keyboard": InputConfig(kb_layout="eu", kb_repeat_rate=50, kb_repeat_delay=600)
+}
 
 
 @hook.subscribe.startup_once

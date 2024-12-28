@@ -1,8 +1,7 @@
 { pkgs, ... }:
 {
-  # services.xserver.enable = true;
-  # services.xserver.xkb.layout = "eu";
-  # services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.enable = false;
+  services.xserver.xkb.layout = "eu";
 
   # setup display manager which supports wayland
   services.displayManager.sddm = {
@@ -21,11 +20,20 @@
     fira-code-symbols
   ];
 
+  # enable ydotool
+  programs.ydotool = {
+    group = "input";
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     wayland-utils
     xwayland
     kanshi
     wl-clipboard
+    gnome-keyring
+    eduvpn-client
+    wdisplays
     # lightlocker
     # flameshot
     # xorg.xset

@@ -18,11 +18,15 @@
       shellOptions = [
         "histappend"
         "autocd"
+        "cdspell"
         "extglob"
         "nocaseglob"
       ];
       historyFile = "$HOME/.config/bash_history";
-      historyControl = [ "erasedups" ];
+      historyControl = [
+        "erasedups"
+        "ignoreboth"
+      ];
       historyIgnore = [
         "ls"
         "ll"
