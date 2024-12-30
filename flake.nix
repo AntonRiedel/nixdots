@@ -13,6 +13,9 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
   outputs =
     {
@@ -21,6 +24,7 @@
       nixpkgs-unstable,
       home-manager,
       auto-cpufreq,
+      ghostty,
       ...
     }@inputs:
     let
@@ -42,7 +46,12 @@
       nixosConfigurations = {
         diamond = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit system pkgs pkgs-unstable;
+            inherit
+              inputs
+              system
+              pkgs
+              pkgs-unstable
+              ;
           };
           modules = [
             ./systems/diamond/diamond.nix
@@ -52,7 +61,12 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
               home-manager.extraSpecialArgs = {
-                inherit system pkgs pkgs-unstable;
+                inherit
+                  inputs
+                  system
+                  pkgs
+                  pkgs-unstable
+                  ;
               };
               home-manager.users.anton = import ./systems/diamond/home.nix;
             }
@@ -60,7 +74,12 @@
         };
         ruby = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit system pkgs pkgs-unstable;
+            inherit
+              inputs
+              system
+              pkgs
+              pkgs-unstable
+              ;
           };
           modules = [
             ./systems/ruby/ruby.nix
@@ -78,7 +97,12 @@
         };
         sapphire = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit system pkgs pkgs-unstable;
+            inherit
+              inputs
+              system
+              pkgs
+              pkgs-unstable
+              ;
           };
           modules = [
             ./systems/sapphire/sapphire.nix
@@ -100,14 +124,14 @@
       homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit pkgs pkgs-unstable;
+          inherit inputs pkgs pkgs-unstable;
         };
         modules = [ ./systems/silver/silver.nix ];
       };
       homeConfigurations."ga45can@kta" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit pkgs pkgs-unstable;
+          inherit inputs pkgs pkgs-unstable;
         };
         modules = [ ./systems/kta/kta.nix ];
       };

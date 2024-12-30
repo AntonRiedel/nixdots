@@ -1,6 +1,13 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  inputs,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 {
   home.packages = [
+
+    inputs.ghostty.packages."${pkgs.system}".default
     pkgs.firefox
     pkgs.chromium
     pkgs.qutebrowser
@@ -11,7 +18,7 @@
 
     pkgs.rofi-wayland
 
-    pkgs.passff-host
+    # pkgs.passff-host
     pkgs.thunderbird
     pkgs.mattermost-desktop
     pkgs.nextcloud-client
@@ -20,6 +27,7 @@
     pkgs.sxiv
 
     pkgs.tigervnc
+    pkgs.flameshot
     pkgs.scrcpy
     pkgs.zathura
     pkgs.kdePackages.okular

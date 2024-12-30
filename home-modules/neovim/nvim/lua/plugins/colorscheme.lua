@@ -7,7 +7,7 @@ return {
 		config = function()
 			-- load the colorscheme here
 			vim.o.termguicolors = true
-			vim.cmd([[colorscheme duskfox]])
+			vim.cmd([[colorscheme carbonfox]])
 		end,
 	},
 }

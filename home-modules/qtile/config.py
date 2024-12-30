@@ -6,7 +6,8 @@ import subprocess, os
 
 mod = "mod4"
 
-terminal = "kitty"
+terminal = "ghostty"
+# terminal = "kitty"
 browser = "firefox"
 browser2 = "chromium"
 browser3 = "qutebrowser"
