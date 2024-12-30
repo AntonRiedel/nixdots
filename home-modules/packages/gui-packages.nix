@@ -2,10 +2,11 @@
 {
   home.packages = [
     pkgs.firefox
+    pkgs.chromium
+    pkgs.qutebrowser
     pkgs.kitty
     pkgs.pavucontrol
     pkgs.pulsemixer
-    pkgs.chromium
     pkgs.zoom-us
 
     pkgs.passff-host
