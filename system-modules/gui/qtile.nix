@@ -31,8 +31,6 @@
     xwayland
     kanshi
     wl-clipboard
-    gnome-keyring
-    eduvpn-client
     wdisplays
     # lightlocker
     # flameshot

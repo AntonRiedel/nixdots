@@ -19,6 +19,7 @@
 
     # pkgs.passff-host
     pkgs.thunderbird
+    pkgs.eduvpn-client
     pkgs.mattermost-desktop
     pkgs.nextcloud-client
     pkgs.remmina
