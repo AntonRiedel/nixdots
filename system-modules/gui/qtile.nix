@@ -32,8 +32,5 @@
     kanshi
     wl-clipboard
     wdisplays
-    # lightlocker
-    # flameshot
-    # xorg.xset
   ];
 }

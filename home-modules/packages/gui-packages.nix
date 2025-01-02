@@ -27,7 +27,8 @@
     pkgs.sxiv
 
     pkgs.tigervnc
-    pkgs-unstable.flameshot
+    pkgs.flameshot
+    pkgs.grim
     pkgs.scrcpy
     pkgs.zathura
     pkgs.kdePackages.okular
