@@ -14,7 +14,7 @@ browser3 = "qutebrowser"
 pwdPicker = "keepmenu -C"
 vncviewer = "vncviewer"
 dmenu = "rofi -show run"
-wallpaper = "~/nextcloud/wallpaper.png"
+wallpaper = "/home/anton/nextcloud/wallpaper/nixos.png"
 
 keys = [
     Key([mod], "j", lazy.layout.next()),

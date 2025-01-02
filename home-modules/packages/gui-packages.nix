@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   pkgs-unstable,
   ...
@@ -7,11 +6,11 @@
 {
   home.packages = [
 
-    inputs.ghostty.packages."${pkgs.system}".default
     pkgs.firefox
     pkgs.chromium
     pkgs.qutebrowser
     pkgs.kitty
+
     pkgs.pavucontrol
     pkgs.pulsemixer
     pkgs.zoom-us

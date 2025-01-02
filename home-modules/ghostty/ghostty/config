@@ -1,0 +1,6 @@
+window-decoration = false
+theme = carbonfox
+font-family = Fira Code
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
