@@ -7,9 +7,9 @@
   home.packages = [
 
     pkgs.firefox
-    pkgs.chromium
-    pkgs.qutebrowser
-    pkgs.kitty
+    pkgs-unstable.chromium
+    pkgs-unstable.qutebrowser
+    # pkgs.kitty
 
     pkgs.pavucontrol
     pkgs.pulsemixer
@@ -27,7 +27,7 @@
     pkgs.sxiv
 
     pkgs.tigervnc
-    pkgs.flameshot
+    pkgs-unstable.flameshot
     pkgs.scrcpy
     pkgs.zathura
     pkgs.kdePackages.okular

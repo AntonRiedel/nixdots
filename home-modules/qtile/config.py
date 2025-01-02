@@ -108,7 +108,7 @@ for monitor in [1]:
                 widget.Battery(format="{char}{percent:2.0%} {hour:d}:{min:02d}"),
                 widget.Sep(),
                 widget.Clock(format="%H:%M (%a) %d.%m.%Y"),
-                widget.Systray(),
+                widget.StatusNotifier(),
             ]
         )
         Flag = False
@@ -184,7 +184,7 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = {
     # "type:keyboard": InputConfig(kb_layout="eu")
-    "type:keyboard": InputConfig(kb_layout="eu", kb_repeat_rate=50)
+    "type:keyboard": InputConfig(kb_layout="eu", kb_repeat_rate=60)
     # "type:keyboard": InputConfig(kb_layout="eu", kb_repeat_rate=50, kb_repeat_delay=600)
 }
 

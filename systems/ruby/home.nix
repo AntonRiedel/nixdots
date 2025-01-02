@@ -14,7 +14,8 @@
     ../../home-modules/qtile/qtile.nix
     ../../home-modules/ghostty/ghostty.nix
     # ../../home-modules/kitty/kitty.nix
-    ../../home-modules/gpg/gpg.nix
+    # ../../home-modules/gpg/gpg.nix
+    ../../home-modules/keepassxc/keepassxc.nix
 
     ../../home-modules/fzf/fzf.nix
     ../../home-modules/tmux/tmux.nix
