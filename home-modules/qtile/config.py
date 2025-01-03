@@ -15,6 +15,8 @@ pwdPicker = "keepmenu -C"
 vncviewer = "vncviewer"
 dmenu = "rofi -show run"
 wallpaper = "/home/anton/nextcloud/wallpaper/nixos.png"
+screenshot = "grim -g $(slurp) - | swappy -f -"
+
 
 keys = [
     Key([mod], "j", lazy.layout.next()),
@@ -30,6 +32,7 @@ keys = [
     # Key([mod], "r", lazy.spawncmd()),
     Key([mod], "r", lazy.spawn(dmenu)),
     Key([mod], "space", lazy.window.toggle_floating()),
+    Key([mod, "shift"], "space", lazy.spawn(screenshot)),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "period", lazy.next_screen()),
     Key([mod], "comma", lazy.prev_screen()),
@@ -42,7 +45,7 @@ keys = [
     Key([mod], "p", lazy.spawn("pulsemixer --change-volume +10")),
     Key([mod, "shift"], "p", lazy.spawn("pulsemixer --change-volume -10")),
     Key([mod], "m", lazy.spawn("pulsemixer --toggle-mute")),
-    Key([mod, "shift"], "l", lazy.spawn("light-locker-command -l")),
+    # Key([mod, "shift"], "l", lazy.spawn("light-locker-command -l")),
 ]
 
 groups = [Group(i) for i in "123456789"]

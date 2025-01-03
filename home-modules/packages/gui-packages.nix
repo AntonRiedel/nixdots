@@ -27,8 +27,12 @@
     pkgs.sxiv
 
     pkgs.tigervnc
-    pkgs.flameshot
+    #pkgs.flameshot
+
     pkgs.grim
+    pkgs.slurp
+    pkgs.swappy
+
     pkgs.scrcpy
     pkgs.zathura
     pkgs.kdePackages.okular

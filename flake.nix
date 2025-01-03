@@ -89,7 +89,12 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
               home-manager.extraSpecialArgs = {
-                inherit inputs system pkgs pkgs-unstable;
+                inherit
+                  inputs
+                  system
+                  pkgs
+                  pkgs-unstable
+                  ;
               };
               home-manager.users.anton = import ./systems/ruby/home.nix;
             }
