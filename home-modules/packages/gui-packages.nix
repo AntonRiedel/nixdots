@@ -9,7 +9,7 @@
     pkgs.firefox
     pkgs-unstable.chromium
     pkgs-unstable.qutebrowser
-    # pkgs.kitty
+    pkgs.kitty
 
     pkgs.pavucontrol
     pkgs.pulsemixer
@@ -32,9 +32,9 @@
 
     pkgs.tigervnc
 
-    pkgs.grim
-    pkgs.slurp
-    pkgs.swappy
+    # pkgs.grim
+    # pkgs.slurp
+    # pkgs.swappy
 
     pkgs.scrcpy
     pkgs.zathura
