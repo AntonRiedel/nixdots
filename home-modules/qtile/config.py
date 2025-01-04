@@ -65,9 +65,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
+    font="mono",
     fontsize=14,
-    padding=3,
+    padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -91,8 +91,8 @@ for monitor in [1]:
     if Flag:
         MyWidgets.extend(
             [
-                widget.Sep(),
-                widget.Prompt(),
+                # widget.Sep(),
+                # widget.Prompt(),
                 widget.Sep(),
                 widget.WindowName(),
                 # widget.TextBox(fmt="NET"),
@@ -101,17 +101,30 @@ for monitor in [1]:
                 # widget.TextBox(fmt="CPU"),
                 # widget.CPUGraph(frequency=5),
                 widget.Sep(),
-                widget.TextBox(fmt="🔊"),
+                widget.TextBox(
+                    fmt="🔊",
+                ),
                 widget.PulseVolume(),
                 widget.Sep(),
-                widget.TextBox(fmt="🧠"),
-                widget.Memory(measure_mem="G"),
+                widget.TextBox(
+                    fmt="🧠",
+                ),
+                widget.Memory(
+                    measure_mem="G",
+                ),
                 widget.Sep(),
-                widget.TextBox(fmt="🔋"),
-                widget.Battery(format="{char}{percent:2.0%} {hour:d}:{min:02d}"),
+                widget.TextBox(
+                    fmt="🔋",
+                ),
+                widget.Battery(
+                    format="{char}{percent:2.0%} {hour:d}:{min:02d}",
+                ),
                 widget.Sep(),
-                widget.Clock(format="%H:%M (%a) %d.%m.%Y"),
-                widget.StatusNotifier(),
+                widget.Clock(
+                    format="%H:%M (%a) %d.%m.%Y",
+                ),
+                widget.Systray(),
+                # widget.StatusNotifier(),
             ]
         )
         Flag = False

@@ -13,9 +13,13 @@
 
     pkgs.pavucontrol
     pkgs.pulsemixer
-    pkgs.zoom-us
 
-    pkgs.rofi-wayland
+    pkgs.zoom-us
+    # pkgs.xdg-desktop-portal
+    # pkgs.kdePackages.xdg-desktop-portal-kde
+
+    # pkgs.rofi-wayland
+    pkgs.rofi
 
     # pkgs.passff-host
     pkgs.thunderbird
@@ -27,7 +31,6 @@
     pkgs.sxiv
 
     pkgs.tigervnc
-    #pkgs.flameshot
 
     pkgs.grim
     pkgs.slurp
@@ -40,6 +43,17 @@
     pkgs.libreoffice
     pkgs.imagemagick
     pkgs.xournalpp
+
+    # x11 applications
+    pkgs.xcompmgr
+    pkgs.xdotool
+    pkgs.xorg.xset
+    pkgs.flameshot
+    pkgs.xorg.xrandr
+    pkgs.arandr
+    pkgs.autorandr
+    pkgs.xclip
+
   ];
 
 }

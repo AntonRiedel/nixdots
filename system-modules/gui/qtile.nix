@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
-  services.xserver.enable = false;
+  services.xserver.enable = true;
   services.xserver.xkb.layout = "eu";
 
   # setup display manager which supports wayland
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true;
+    # wayland.enable = true;
   };
   services.xserver.windowManager.qtile = {
     enable = true;
@@ -20,17 +20,18 @@
     fira-code-symbols
   ];
 
+  # for wayland
   # enable ydotool
-  programs.ydotool = {
-    group = "input";
-    enable = true;
-  };
+  # programs.ydotool = {
+  #   group = "input";
+  #   enable = true;
+  # };
 
-  environment.systemPackages = with pkgs; [
-    wayland-utils
-    xwayland
-    kanshi
-    wl-clipboard
-    wdisplays
-  ];
+  # environment.systemPackages = with pkgs; [
+    # wayland-utils
+    # xwayland
+    # kanshi
+    # wl-clipboard
+    # wdisplays
+  # ];
 }

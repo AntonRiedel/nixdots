@@ -11,7 +11,6 @@
     unzip
     stow
     stylua
-    xclip
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     pyright
     lua51Packages.lua
