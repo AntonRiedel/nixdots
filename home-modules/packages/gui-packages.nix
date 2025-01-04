@@ -4,10 +4,14 @@
     pkgs.firefox
     pkgs.chromium
     pkgs.qutebrowser
+    pkgs.keepassxc
     pkgs.kitty
     pkgs.pavucontrol
     pkgs.pulsemixer
     pkgs.zoom-us
+
+    pkgs.rofi-wayland
+    pkgs.keepmenu
 
     pkgs.passff-host
     pkgs.thunderbird
@@ -24,8 +28,6 @@
     pkgs.pcmanfm
     pkgs.libreoffice
     pkgs.imagemagick
-    pkgs.arandr
-    pkgs.autorandr
     pkgs.xournalpp
   ];
 

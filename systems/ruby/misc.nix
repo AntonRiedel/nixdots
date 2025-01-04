@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ ... }:
 {
   # timezone
   time.timeZone = "Europe/Berlin";
