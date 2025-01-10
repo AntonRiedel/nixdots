@@ -45,7 +45,7 @@
     pkgs.xournalpp
 
     # x11 applications
-    pkgs.xcompmgr
+    pkgs.picom
     pkgs.xdotool
     pkgs.xorg.xset
     pkgs.flameshot
