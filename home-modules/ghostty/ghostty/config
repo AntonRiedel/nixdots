@@ -1,4 +1,5 @@
 window-decoration = false
+confirm-close-surface = false
 theme = carbonfox
 font-family = Fira Code
 font-feature = -calt
