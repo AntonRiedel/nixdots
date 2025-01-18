@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     lutris
     mangohud
+    cool-retro-term
   ];
 
   programs.steam = {
