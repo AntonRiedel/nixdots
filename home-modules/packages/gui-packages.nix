@@ -6,7 +6,8 @@
 {
   home.packages = [
 
-    pkgs.firefox
+    pkgs-unstable.firefox
+    # pkgs-unstable.chromium
     pkgs-unstable.chromium
     pkgs-unstable.qutebrowser
     pkgs.kitty
