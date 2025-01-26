@@ -83,6 +83,7 @@
           };
           modules = [
             ./systems/ruby/ruby.nix
+            auto-cpufreq.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
