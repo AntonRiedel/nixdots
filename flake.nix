@@ -112,14 +112,18 @@
           };
           modules = [
             ./systems/sapphire/sapphire.nix
-            auto-cpufreq.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
               home-manager.extraSpecialArgs = {
-                inherit system pkgs pkgs-unstable;
+                inherit
+                  inputs
+                  system
+                  pkgs
+                  pkgs-unstable
+                  ;
               };
               home-manager.users.anton = import ./systems/sapphire/home.nix;
             }
