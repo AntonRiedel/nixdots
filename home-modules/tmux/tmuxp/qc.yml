@@ -1,26 +1,30 @@
 session_name: QC
 start_directory: ${ALICE}
 windows:
-  - window_name: dev
+  - window_name: QC
     panes:
       - shell_command:
           - cd QualityControl
           - clear
           - nvim
-  - window_name: build
+  - window_name: O2
     panes:
       - shell_command:
-          - alienv enter QualityControl/latest CMake/latest ninja/latest --shellrc
-          - cd sw/BUILD/QualityControl-latest/QualityControl
-          - while sleep 0.1; do find ${ALICE}/QualityControl/ | entr -pc ninja install -j$(nproc); done
-  - window_name: env
+          - cd O2
+          - clear
+          - nvim
+  - window_name: Build
+    panes:
+      - shell_command:
+          - while sleep 0.1; do find ${ALICE}/QualityControl/ ${ALICE}/O2 | entr -pc aliBuild build QualityControl ; done
+  - window_name: Env
     panes:
       - shell_command:
           - sleep 10s
           - alienv enter QualityControl/latest --shellrc
           - cd
           - clear
-  - window_name: local
+  - window_name: Local
     panes:
       - shell_command:
           - cd

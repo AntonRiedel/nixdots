@@ -26,5 +26,7 @@
     nodePackages.bash-language-server
     nixd
     root
+    entr
+    cpplint
   ];
 }

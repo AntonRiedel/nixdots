@@ -71,58 +71,60 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-# def getMonitors():
-#     output = subprocess.check_output(["xrandr","-q"]).decode("utf-8")
-#     monitors = []
-#     for line in output.splitlines():
-#         if "connected" in line:
-#             monitor = line.split()[0]
-#             monitors.append(monitor)
-#     return monitors
+
+def getMonitors():
+    output = subprocess.check_output(["xrandr", "-q"]).decode("utf-8")
+    monitors = []
+    for line in output.splitlines():
+        if "connected" in line:
+            monitor = line.split()[0]
+            monitors.append(monitor)
+    return monitors
+
 
 screens = []
 Flag = True
-for monitor in [1]:
+for _ in getMonitors():
     MyWidgets = [
         widget.CurrentScreen(),
         widget.CurrentLayoutIcon(),
         widget.GroupBox(),
+        # widget.Sep(),
+        # widget.Prompt(),
+        widget.Sep(),
+        widget.WindowName(),
+        # widget.TextBox(fmt="NET"),
+        # widget.NetGraph(frequency=5),
+        # widget.Sep(),
+        # widget.TextBox(fmt="CPU"),
+        # widget.CPUGraph(frequency=5),
+        widget.Sep(),
+        widget.TextBox(
+            fmt="🔊",
+        ),
+        widget.PulseVolume(),
+        widget.Sep(),
+        widget.TextBox(
+            fmt="🧠",
+        ),
+        widget.Memory(
+            measure_mem="G",
+        ),
+        widget.Sep(),
+        widget.TextBox(
+            fmt="🔋",
+        ),
+        widget.Battery(
+            format="{char}{percent:2.0%} {hour:d}:{min:02d}",
+        ),
+        widget.Sep(),
+        widget.Clock(
+            format="%H:%M (%a) %d.%m.%Y",
+        ),
     ]
     if Flag:
         MyWidgets.extend(
             [
-                # widget.Sep(),
-                # widget.Prompt(),
-                widget.Sep(),
-                widget.WindowName(),
-                # widget.TextBox(fmt="NET"),
-                # widget.NetGraph(frequency=5),
-                # widget.Sep(),
-                # widget.TextBox(fmt="CPU"),
-                # widget.CPUGraph(frequency=5),
-                widget.Sep(),
-                widget.TextBox(
-                    fmt="🔊",
-                ),
-                widget.PulseVolume(),
-                widget.Sep(),
-                widget.TextBox(
-                    fmt="🧠",
-                ),
-                widget.Memory(
-                    measure_mem="G",
-                ),
-                widget.Sep(),
-                widget.TextBox(
-                    fmt="🔋",
-                ),
-                widget.Battery(
-                    format="{char}{percent:2.0%} {hour:d}:{min:02d}",
-                ),
-                widget.Sep(),
-                widget.Clock(
-                    format="%H:%M (%a) %d.%m.%Y",
-                ),
                 widget.Systray(),
                 # widget.StatusNotifier(),
             ]
