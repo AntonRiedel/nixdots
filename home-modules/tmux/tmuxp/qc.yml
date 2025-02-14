@@ -16,7 +16,7 @@ windows:
   - window_name: Build
     panes:
       - shell_command:
-          - while sleep 0.1; do find ${ALICE}/QualityControl/ ${ALICE}/O2 | entr -pc aliBuild build QualityControl ; done
+          - while sleep 0.1; do find ${ALICE}/QualityControl/ ${ALICE}/O2 | entr -pc aliBuild build QualityControl --debug ; done
   - window_name: Env
     panes:
       - shell_command:
