@@ -6,11 +6,11 @@
 {
   home.packages = [
 
-    pkgs-unstable.firefox
+    pkgs.firefox
     # pkgs-unstable.chromium
     pkgs-unstable.chromium
     pkgs-unstable.qutebrowser
-    pkgs.kitty
+    # pkgs.kitty
 
     pkgs.pavucontrol
     pkgs.pulsemixer
