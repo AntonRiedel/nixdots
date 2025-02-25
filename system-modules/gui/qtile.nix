@@ -8,6 +8,8 @@
     enable = true;
     # wayland.enable = true;
   };
+  security.pam.services.sddm.enableKwallet = true;
+
   services.xserver.windowManager.qtile = {
     enable = true;
     extraPackages = python3Packages: with python3Packages; [ qtile-extras ];
@@ -28,10 +30,10 @@
   # };
 
   # environment.systemPackages = with pkgs; [
-    # wayland-utils
-    # xwayland
-    # kanshi
-    # wl-clipboard
-    # wdisplays
+  # wayland-utils
+  # xwayland
+  # kanshi
+  # wl-clipboard
+  # wdisplays
   # ];
 }

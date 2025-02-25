@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 {
   home.packages = [
-    inputs.ghostty.packages."${pkgs.system}".default
+    pkgs.ghostty
   ];
   home.file = {
     ".config/ghostty" = {

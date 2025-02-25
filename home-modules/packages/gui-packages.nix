@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-unstable,
+  # pkgs-unstable,
   ...
 }:
 {
@@ -8,9 +8,11 @@
 
     pkgs.firefox
     # pkgs-unstable.chromium
-    pkgs-unstable.chromium
-    pkgs-unstable.qutebrowser
+    # pkgs.chromium
+    pkgs.brave
+    pkgs.qutebrowser
     # pkgs.kitty
+    pkgs.ghostty
 
     pkgs.pavucontrol
     pkgs.pulsemixer

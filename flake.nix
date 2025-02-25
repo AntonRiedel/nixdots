@@ -13,9 +13,6 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
   };
   outputs =
     {
@@ -24,7 +21,6 @@
       nixpkgs-unstable,
       home-manager,
       auto-cpufreq,
-      ghostty,
       ...
     }@inputs:
     let

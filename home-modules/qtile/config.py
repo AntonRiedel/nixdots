@@ -8,14 +8,15 @@ mod = "mod4"
 
 terminal = "ghostty"
 # terminal = "kitty"
-browser = "firefox"
-browser2 = "chromium"
+browser = "brave"
+browser2 = "firefox"
 browser3 = "qutebrowser"
 pwdPicker = "keepmenu -C"
 vncviewer = "vncviewer"
 dmenu = "rofi -show run"
 wallpaper = "/home/anton/nextcloud/wallpaper/nixos.png"
-screenshot = "grim -g $(slurp) - | swappy -f -"
+screenshot = "flameshot gui"
+# screenshot = "grim -g $(slurp) - | swappy -f -"
 
 
 keys = [
