@@ -8,7 +8,7 @@ mod = "mod4"
 
 terminal = "ghostty"
 # terminal = "kitty"
-browser = "brave"
+browser = "brave --password-store=basic"
 browser2 = "firefox"
 browser3 = "qutebrowser"
 pwdPicker = "keepmenu -C"

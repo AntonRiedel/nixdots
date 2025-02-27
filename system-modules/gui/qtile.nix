@@ -8,7 +8,7 @@
     enable = true;
     # wayland.enable = true;
   };
-  security.pam.services.sddm.enableKwallet = true;
+  # security.pam.services.sddm.enableKwallet = true;
 
   services.xserver.windowManager.qtile = {
     enable = true;

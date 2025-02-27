@@ -15,9 +15,6 @@
     pkgs.acpi
     pkgs.pciutils
     pkgs.iio-sensor-proxy
-
-    # dev tools
-    pkgs-unstable.devenv
   ];
   programs.adb.enable = true;
   programs.dconf.enable = true;

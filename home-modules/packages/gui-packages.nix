@@ -41,7 +41,7 @@
 
     pkgs.scrcpy
     pkgs.zathura
-    pkgs.kdePackages.okular
+    # pkgs.kdePackages.okular
     pkgs.pcmanfm
     pkgs.libreoffice
     pkgs.imagemagick
