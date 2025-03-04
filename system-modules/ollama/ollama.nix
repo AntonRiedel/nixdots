@@ -8,8 +8,8 @@
     ];
     acceleration = false;
   };
-
-  # environment.systemPackages = [
-  #   pkgs.fabric-ai
-  # ];
+  environment.systemPackages = [
+    pkgs.fabric-ai
+    pkgs.poppler_utils
+  ];
 }

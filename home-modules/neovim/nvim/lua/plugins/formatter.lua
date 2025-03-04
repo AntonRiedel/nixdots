@@ -10,6 +10,9 @@ return {
 				lua = {
 					require("formatter.filetypes.lua").stylua,
 				},
+				sh = {
+					require("formatter.filetypes.lua").sh,
+				},
 				latex = {
 					require("formatter.filetypes.lua").latexindent,
 				},

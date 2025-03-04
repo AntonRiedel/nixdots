@@ -126,8 +126,8 @@ for _ in getMonitors():
     if Flag:
         MyWidgets.extend(
             [
-                widget.Systray(),
-                # widget.StatusNotifier(),
+                # widget.Systray(),
+                widget.StatusNotifier(),
             ]
         )
         Flag = False

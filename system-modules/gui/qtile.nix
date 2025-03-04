@@ -8,11 +8,14 @@
     enable = true;
     # wayland.enable = true;
   };
-  # security.pam.services.sddm.enableKwallet = true;
 
   services.xserver.windowManager.qtile = {
     enable = true;
-    extraPackages = python3Packages: with python3Packages; [ qtile-extras ];
+    extraPackages =
+      python3Packages: with python3Packages; [
+        qtile-extras
+        pyxdg
+      ];
   };
   services.libinput.enable = true;
 
@@ -23,17 +26,18 @@
   ];
 
   # for wayland
-  # enable ydotool
   # programs.ydotool = {
   #   group = "input";
   #   enable = true;
   # };
 
   # environment.systemPackages = with pkgs; [
-  # wayland-utils
-  # xwayland
-  # kanshi
-  # wl-clipboard
-  # wdisplays
+  #   wayland
+  #   wayland-protocols
+  #   wayland-utils
+  #   xwayland
+  #   kanshi
+  #   wl-clipboard
+  #   wdisplays
   # ];
 }
