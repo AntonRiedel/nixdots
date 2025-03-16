@@ -11,7 +11,7 @@ return {
 					require("formatter.filetypes.lua").stylua,
 				},
 				sh = {
-					require("formatter.filetypes.lua").sh,
+					require("formatter.filetypes.lua").shfmt,
 				},
 				latex = {
 					require("formatter.filetypes.lua").latexindent,
