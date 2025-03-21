@@ -14,10 +14,28 @@ return {
 					require("formatter.filetypes.lua").shfmt,
 				},
 				latex = {
-					require("formatter.filetypes.lua").latexindent,
+					function()
+						return {
+							exe = "latexindent.pl",
+							args = {
+								"-g",
+								"/dev/null",
+							},
+							stdin = true,
+						}
+					end,
 				},
 				tex = {
-					require("formatter.filetypes.lua").latexindent,
+					function()
+						return {
+							exe = "latexindent.pl",
+							args = {
+								"-g",
+								"/dev/null",
+							},
+							stdin = true,
+						}
+					end,
 				},
 				c = {
 					require("formatter.filetypes.c").clangformat,

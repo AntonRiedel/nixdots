@@ -11,6 +11,8 @@ return {
 				"c",
 				"diff",
 				"json",
+				-- "latex",
+				-- "bibtex",
 				"lua",
 				"luadoc",
 				"markdown",
