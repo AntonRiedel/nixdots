@@ -9,10 +9,11 @@ return {
 			ensure_installed = {
 				"bash",
 				"c",
+				"cpp",
 				"diff",
 				"json",
-				-- "latex",
-				-- "bibtex",
+				"latex",
+				"bibtex",
 				"lua",
 				"luadoc",
 				"markdown",

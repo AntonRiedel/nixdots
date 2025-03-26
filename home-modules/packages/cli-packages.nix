@@ -22,8 +22,6 @@
     black
     clang-tools
     texlab
-    tree-sitter
-    nodejs
     ltex-ls
     perl538Packages.LatexIndent
     nodePackages.bash-language-server
@@ -31,5 +29,7 @@
     root
     entr
     cpplint
+    gnumake
+    clang
   ];
 }
