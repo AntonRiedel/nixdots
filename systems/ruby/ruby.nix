@@ -15,7 +15,6 @@
     ../../system-modules/dual-function-keys/dual-function-keys.nix
     ../../system-modules/virtualization/virtualization.nix
     ../../system-modules/auto-cpufreq/auto-cpufreq.nix
-    ../../system-modules/ollama/ollama.nix
   ];
 
   environment.systemPackages = with pkgs; [

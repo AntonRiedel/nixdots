@@ -9,10 +9,10 @@
       bashrcExtra = ''
         PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 28)\]\h\[$(tput setaf 1)\]]\[$(tput setaf 7)\] \[$(tput setaf 5)\]\w
         > \[$(tput sgr0)\]"
-
         if (env | grep -Fq 'CONTAINER_ID'); then
-        	PS1="($CONTAINER_ID)$PS1"
-        	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        PS1="($CONTAINER_ID)$PS1"
+        export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        export LD_LIBRARY_PATH="$(/home/anton/nextcloud/PhD/ALICE/analysis/CATS/DLM/install/bin/cats-config --libdir):$LD_LIBRARY_PATH"
         fi
       '';
       shellOptions = [
