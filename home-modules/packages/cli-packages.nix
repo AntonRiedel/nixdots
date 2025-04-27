@@ -29,7 +29,5 @@
     root
     entr
     cpplint
-    gnumake
-    clang
   ];
 }
