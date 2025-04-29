@@ -18,11 +18,9 @@
     pkgs.pulsemixer
 
     pkgs.zoom-us
-    # pkgs.xdg-desktop-portal
-    # pkgs.kdePackages.xdg-desktop-portal-kde
 
-    # pkgs.rofi-wayland
-    pkgs.rofi
+    pkgs.rofi-wayland
+    # pkgs.rofi
 
     # pkgs.passff-host
     pkgs.thunderbird
@@ -46,17 +44,6 @@
     pkgs.libreoffice
     pkgs.imagemagick
     pkgs.xournalpp
-
-    # x11 applications
-    pkgs.picom
-    pkgs.xdotool
-    pkgs.xorg.xset
-    pkgs.flameshot
-    pkgs.xorg.xrandr
-    pkgs.arandr
-    pkgs.autorandr
-    pkgs.xclip
-
   ];
 
 }
