@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   programs.hyprland = {
     enable = true;
+    package = pkgs-unstable.hyprland;
     systemd.setPath.enable = true;
     withUWSM = true;
     xwayland.enable = true;
@@ -39,6 +40,6 @@
     hyprpaper
     xdg-desktop-portal
     kdePackages.xdg-desktop-portal-kde
-
+    displaylink
   ];
 }

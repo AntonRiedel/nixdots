@@ -1,6 +1,6 @@
 {
   pkgs,
-  # pkgs-unstable,
+  pkgs-unstable,
   ...
 }:
 {
@@ -26,7 +26,7 @@
     pkgs.thunderbird
     pkgs.eduvpn-client
     pkgs.mattermost-desktop
-    pkgs.nextcloud-client
+    pkgs-unstable.nextcloud-client
     pkgs.remmina
     pkgs.newsboat
     pkgs.sxiv
