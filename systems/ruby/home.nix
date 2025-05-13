@@ -10,6 +10,7 @@
     # common modules
     ../../home-modules/packages/cli-packages.nix
     ../../home-modules/packages/gui-packages.nix
+    ../../home-modules/cursor/cursor.nix
 
     ../../home-modules/qtile/qtile.nix
     ../../home-modules/ghostty/ghostty.nix

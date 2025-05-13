@@ -1,8 +1,8 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   programs.hyprland = {
     enable = true;
-    package = pkgs-unstable.hyprland;
+    # package = pkgs-unstable.hyprland;
     systemd.setPath.enable = true;
     withUWSM = true;
     xwayland.enable = true;
@@ -12,10 +12,11 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.uwsm.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
+  programs.regreet.enable = true;
 
   # fonts
   fonts.packages = with pkgs; [
@@ -38,6 +39,7 @@
     wl-clipboard
     waybar
     hyprpaper
+    hyprshot
     xdg-desktop-portal
     kdePackages.xdg-desktop-portal-kde
     displaylink

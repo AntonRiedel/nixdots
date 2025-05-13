@@ -2,6 +2,13 @@
 {
   users.users.anton = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "adbusers" "libvirtd" "input" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "adbusers"
+      "libvirtd"
+      "input"
+      "video"
+    ];
   };
 }
