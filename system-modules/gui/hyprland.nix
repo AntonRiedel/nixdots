@@ -32,6 +32,7 @@
 
   environment.systemPackages = with pkgs; [
     wayland
+    wlr-randr
     wayland-protocols
     wayland-utils
     xwayland
@@ -41,7 +42,6 @@
     hyprpaper
     hyprshot
     xdg-desktop-portal
-    kdePackages.xdg-desktop-portal-kde
     displaylink
   ];
 }
