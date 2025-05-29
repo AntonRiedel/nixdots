@@ -13,7 +13,7 @@
     stow
     stylua
     shfmt
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    fira-code
     pyright
     lua51Packages.lua
     luajitPackages.lua-lsp

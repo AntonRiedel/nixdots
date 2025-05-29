@@ -2,7 +2,7 @@
 {
   home.username = "ga45can";
   home.homeDirectory = "/home/ktas/ga45can";
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   nix = {
     package = pkgs.nix;
