@@ -2,7 +2,6 @@
 {
   programs.hyprland = {
     enable = true;
-    # package = pkgs-unstable.hyprland;
     systemd.setPath.enable = true;
     withUWSM = true;
     xwayland.enable = true;
@@ -39,6 +38,7 @@
     kanshi
     wl-clipboard
     waybar
+    noto-fonts-color-emoji
     hyprpaper
     hyprshot
     xdg-desktop-portal

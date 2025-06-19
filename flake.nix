@@ -132,7 +132,9 @@
         extraSpecialArgs = {
           inherit inputs pkgs pkgs-unstable;
         };
-        modules = [ ./systems/silver/silver.nix ];
+        modules = [
+          ./systems/silver/silver.nix
+        ];
       };
       homeConfigurations."ga45can@kta" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;

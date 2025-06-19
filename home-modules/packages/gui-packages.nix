@@ -14,6 +14,7 @@
     # pkgs.kitty
     pkgs.ghostty
 
+    pkgs.qt6.full
     pkgs.pavucontrol
     pkgs.pulsemixer
 
@@ -26,7 +27,7 @@
     pkgs.thunderbird
     pkgs.eduvpn-client
     pkgs.mattermost-desktop
-    pkgs-unstable.nextcloud-client
+    pkgs.nextcloud-client
     pkgs.remmina
     pkgs.newsboat
     pkgs.sxiv
