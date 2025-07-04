@@ -5,11 +5,10 @@
 }:
 {
   home.packages = [
-
     pkgs.firefox
     # pkgs-unstable.chromium
     # pkgs.chromium
-    pkgs.brave
+    pkgs-unstable.brave
     pkgs.qutebrowser
     # pkgs.kitty
     pkgs.ghostty
@@ -24,9 +23,9 @@
     # pkgs.rofi
 
     # pkgs.passff-host
-    pkgs.thunderbird
+    pkgs-unstable.thunderbird
     pkgs.eduvpn-client
-    pkgs.mattermost-desktop
+    pkgs-unstable.mattermost-desktop
     pkgs.nextcloud-client
     pkgs.remmina
     pkgs.newsboat

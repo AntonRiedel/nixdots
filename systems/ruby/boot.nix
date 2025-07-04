@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -12,9 +12,14 @@
     "sd_mod"
     "rtsx_pci_sdmmc"
     "btrfs"
+    "evdi"
   ];
+
   boot.initrd.systemd.enable = true;
-  # boot.initrd.kernelModules = [ "amdgpu" ];
-  # boot.kernelModules = [ "kvm-amd" ];
-  # boot.extraModulePackages = [ ];
+  boot.initrd.kernelModules = [
+    "amdgpu"
+    "evdi"
+  ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.evdi ];
 }

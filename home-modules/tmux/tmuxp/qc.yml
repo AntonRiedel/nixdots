@@ -1,19 +1,19 @@
 session_name: QC
 start_directory: ${ALICE}
 windows:
-  - window_name: QC
+  - window_name: qc
     panes:
       - shell_command:
           - cd QualityControl
           - clear
           - nvim
-  - window_name: O2
+  - window_name: o2
     panes:
       - shell_command:
           - cd O2
           - clear
           - nvim
-  - window_name: Build
+  - window_name: build
     panes:
       - shell_command:
           - while sleep 0.1; do find ${ALICE}/QualityControl/ ${ALICE}/O2 | entr -pc aliBuild build QualityControl --debug ; done
@@ -24,7 +24,7 @@ windows:
           - alienv enter QualityControl/latest --shellrc
           - cd
           - clear
-  - window_name: Local
+  - window_name: local
     panes:
       - shell_command:
           - cd

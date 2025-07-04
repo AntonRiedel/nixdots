@@ -10,9 +10,7 @@ windows:
   - window_name: build
     panes:
       - shell_command:
-          - alienv enter O2Physics/latest CMake/latest ninja/latest --shellrc
-          - cd sw/BUILD/O2Physics-latest/O2Physics
-          - while sleep 0.1; do find ${ALICE}/O2Physics/ | entr -pc ninja install -j$(nproc); done
+          - while sleep 0.1; do find ${ALICE}/O2Physics/ ${ALICE}/O2 | entr -pc aliBuild build O2Physics --debug ; done
   - window_name: env
     panes:
       - shell_command:

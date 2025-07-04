@@ -29,10 +29,15 @@
     enable = true;
   };
 
+  # fixes for displaylink
+  services.xserver.videoDrivers = [ "displaylink" ];
+  systemd.services.dlm.wantedBy = [ "multi-user.target" ];
+
   environment.systemPackages = with pkgs; [
     wayland
     wlr-randr
     wayland-protocols
+    hyprland-protocols
     wayland-utils
     xwayland
     kanshi
@@ -41,6 +46,7 @@
     noto-fonts-color-emoji
     hyprpaper
     hyprshot
+    xdg-desktop-portal
     xdg-desktop-portal
     displaylink
   ];

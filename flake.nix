@@ -11,7 +11,7 @@
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
