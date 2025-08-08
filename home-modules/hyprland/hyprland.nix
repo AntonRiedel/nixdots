@@ -147,8 +147,12 @@
     };
   };
 
-  xdg.configFile."hypr/hypridle.conf".source = ./hypridle.conf;
-  xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
-  xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
+  xdg.configFile."hypr/hypridle.conf".source = ./hypr/hypridle.conf;
+  xdg.configFile."hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
+  xdg.configFile."hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
+
+
+  xdg.configFile."waybar/config".source = ./waybar/config;
+  xdg.configFile."waybar/style.css".source = ./waybar/style.css;
 
 }
