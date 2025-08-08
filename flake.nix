@@ -25,17 +25,15 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
+      pkgsConfig = {
         inherit system;
         config = {
           allowUnfree = true;
         };
       };
-      pkgs-unstable = import nixpkgs-unstable {
+      pkgs-unstable = import inputs.nixpkgs-unstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config = pkgsConfig;
       };
     in
     {
@@ -45,11 +43,16 @@
             inherit
               inputs
               system
-              pkgs
               pkgs-unstable
               ;
           };
           modules = [
+            {
+              nixpkgs = {
+                inherit system;
+                config = pkgsConfig;
+              };
+            }
             ./systems/diamond/diamond.nix
             home-manager.nixosModules.home-manager
             {
@@ -60,7 +63,6 @@
                 inherit
                   inputs
                   system
-                  pkgs
                   pkgs-unstable
                   ;
               };
@@ -73,11 +75,16 @@
             inherit
               inputs
               system
-              pkgs
               pkgs-unstable
               ;
           };
           modules = [
+            {
+              nixpkgs = {
+                inherit system;
+                config = pkgsConfig;
+              };
+            }
             ./systems/ruby/ruby.nix
             auto-cpufreq.nixosModules.default
             home-manager.nixosModules.home-manager
@@ -89,7 +96,6 @@
                 inherit
                   inputs
                   system
-                  pkgs
                   pkgs-unstable
                   ;
               };
@@ -102,11 +108,16 @@
             inherit
               inputs
               system
-              pkgs
               pkgs-unstable
               ;
           };
           modules = [
+            {
+              nixpkgs = {
+                inherit system;
+                config = pkgsConfig;
+              };
+            }
             ./systems/sapphire/sapphire.nix
             home-manager.nixosModules.home-manager
             {
@@ -117,8 +128,6 @@
                 inherit
                   inputs
                   system
-                  pkgs
-                  pkgs-unstable
                   ;
               };
               home-manager.users.anton = import ./systems/sapphire/home.nix;
@@ -128,20 +137,38 @@
       };
 
       homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
         extraSpecialArgs = {
-          inherit inputs pkgs pkgs-unstable;
+          inherit
+            inputs
+            pkgs-unstable
+            ;
         };
         modules = [
+          {
+            nixpkgs = {
+              inherit system;
+              config = pkgsConfig;
+            };
+          }
           ./systems/silver/silver.nix
         ];
       };
       homeConfigurations."ga45can@kta" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
         extraSpecialArgs = {
-          inherit inputs pkgs pkgs-unstable;
+          inherit
+            inputs
+            pkgs-unstable
+            ;
         };
-        modules = [ ./systems/kta/kta.nix ];
+        modules = [
+          {
+            nixpkgs = {
+              inherit system;
+              config = pkgsConfig;
+            };
+          }
+          ./systems/kta/kta.nix
+        ];
       };
     };
 }
