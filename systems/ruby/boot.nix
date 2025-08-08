@@ -4,6 +4,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelParams = [ "amdgpu.dcdebugmask=0x400" ];
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [
     "nvme"

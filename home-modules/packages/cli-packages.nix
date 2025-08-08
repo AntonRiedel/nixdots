@@ -4,6 +4,8 @@
     fastfetch
     htop
     fd
+    pik
+    procs
     ripgrep
     trash-cli
     xdg-utils
