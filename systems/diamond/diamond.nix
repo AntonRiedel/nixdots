@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
     # system specific includes
@@ -10,19 +10,27 @@
     ./misc.nix
 
     # common modules
-    ../../system-modules/gui/qtile.nix
+    ../../system-modules/gui/hyprland.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/packages/extra-packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
     ../../system-modules/virtualization/virtualization.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    neovim
+    git
+    curl
+    wget
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-    trusted-users = root anton
-  '';
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+    auto-optimise-store = true;
+    trusted-users = [ "anton" ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -30,5 +38,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
