@@ -20,9 +20,9 @@
     ../../home-modules/shell/bash.nix
     ../../home-modules/git/git.nix
     ../../home-modules/tmux/tmux.nix
-    ../../home-modules/keepassxc/keepassxc.nix
     ../../home-modules/fzf/fzf.nix
     ../../home-modules/neovim/neovim.nix
+    ../../home-modules/keepassxc/keepassxc.nix
   ];
 
   # Let Home Manager install and manage itself.

@@ -41,6 +41,7 @@
     pkgs.libreoffice
     pkgs.imagemagick
     pkgs.xournalpp
+    pkgs.rnote
   ];
 
 }

@@ -27,6 +27,8 @@
     ]
   );
 
+  environment.systemPackages = with pkgs; [ gnomeExtensions.forge ];
+
   # disable pulseaudio explicitly
   hardware.pulseaudio.enable = false;
 
