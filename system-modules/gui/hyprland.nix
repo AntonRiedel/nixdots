@@ -11,16 +11,13 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.uwsm.enable = true;
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   wayland.enable = true;
-  # };
   programs.regreet.enable = true;
 
   # fonts
   fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
+    font-awesome
   ];
 
   # for wayland
@@ -28,10 +25,6 @@
     group = "input";
     enable = true;
   };
-
-  # fixes for displaylink
-  # services.xserver.videoDrivers = [ "displaylink" ];
-  # systemd.services.dlm.wantedBy = [ "multi-user.target" ];
 
   environment.systemPackages = with pkgs; [
     wayland
@@ -43,10 +36,8 @@
     kanshi
     wl-clipboard
     waybar
-    noto-fonts-color-emoji
     hyprpaper
     hyprshot
     xdg-desktop-portal
-    # displaylink
   ];
 }

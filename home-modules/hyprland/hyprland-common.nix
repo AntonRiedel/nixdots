@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -6,12 +6,6 @@
     portalPackage = null;
 
     settings = {
-      monitor = [
-        "eDP-1,1920x1080@60,0x0,1"
-        "HDMI-A-1,1920x1080@60,auto-left,1"
-        "DVI-I-1,1920x1080@60,0x0,1"
-        "DVI-I-2,1920x1080@60,auto-right,1"
-      ];
 
       xwayland.force_zero_scaling = true;
 
@@ -138,6 +132,12 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
       ];
 
+      binde = [
+        ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
+        ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
+        ", XF86AudioMute, exec, pulsemixer --toggle-mute"
+      ];
+
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
@@ -148,11 +148,8 @@
   };
 
   xdg.configFile."hypr/hypridle.conf".source = ./hypr/hypridle.conf;
-  xdg.configFile."hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
   xdg.configFile."hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
-
-
-  xdg.configFile."waybar/config".source = ./waybar/config;
-  xdg.configFile."waybar/style.css".source = ./waybar/style.css;
+  xdg.configFile."hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
+  xdg.configFile."rofi/config.rasi".source = ./rofi/config.rasi;
 
 }

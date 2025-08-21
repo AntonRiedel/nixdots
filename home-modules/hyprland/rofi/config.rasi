@@ -1,0 +1,5 @@
+configuration {
+ modi: "drun,filebrowser";
+ font: "fira-code 20";
+}
+@theme "solarized"

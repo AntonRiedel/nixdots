@@ -1,8 +1,8 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   home.packages = [
     pkgs.keepassxc
-    pkgs-unstable.keepmenu
+    pkgs.keepmenu
   ];
   home.file = {
     ".config/keepmenu" = {

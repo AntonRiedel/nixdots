@@ -1,5 +1,5 @@
 {
-    "layer": "top",	
+    "layer": "top",
     "position": "top",
     "height": 26,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
@@ -45,24 +45,23 @@
               "critical": 20
 },
         "format": "{icon}  {capacity}%",
-        "format-good": "{icon}  {capacity}%", 
+        "format-good": "{icon}  {capacity}%",
         "format-full": "   {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "interval": 30
 },
     "network": {
-        "interface": "wlp3s0", 
+        "interface": "wlp3s0",
         "format-wifi": " ",
 	"format-ethernet": "🌐",
         "format-disconnected": "❌",
         "interval": 60,
-       "on-click": "nm-connection-editor" }
+        "on-click": "nm-connection-editor" }
 },
     "temperature": {
-	   	"thermal-zone": 0,
-		"format": "{icon} {temperatureC}°C",
-		"format-icons":[""],
-		"interval": 30
+        "hwmon-path" :  /sys/class/hwmon/hwmon0/temp1_input,
+	"format": "TEMP {temperatureC}°C",
+	"interval": 30
 },
     "pulseaudio": {
         "format": " {icon}  {volume}% ",

@@ -1,14 +1,12 @@
 {
   pkgs,
-  pkgs-unstable,
   ...
 }:
 {
   home.packages = [
     pkgs.firefox
-    # pkgs-unstable.chromium
     # pkgs.chromium
-    pkgs-unstable.brave
+    pkgs.brave
     pkgs.qutebrowser
     # pkgs.kitty
     pkgs.ghostty
@@ -23,11 +21,10 @@
     # pkgs.rofi
 
     # pkgs.passff-host
-    pkgs-unstable.thunderbird
+    pkgs.thunderbird
     pkgs.eduvpn-client
-    pkgs-unstable.mattermost-desktop
+    pkgs.mattermost-desktop
     pkgs.nextcloud-client
-    pkgs.remmina
     pkgs.newsboat
     pkgs.sxiv
 
