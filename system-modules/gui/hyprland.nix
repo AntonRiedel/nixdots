@@ -11,7 +11,15 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.uwsm.enable = true;
-  programs.regreet.enable = true;
+
+  programs.regreet = {
+    enable = true;
+    settings = {
+      background = {
+        path = "/home/anton/nextcloud/wallpaper/arch10.jpg";
+      };
+    };
+  };
 
   # fonts
   fonts.packages = with pkgs; [
