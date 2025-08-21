@@ -33,6 +33,7 @@
     hyprland-protocols
     wayland-utils
     xwayland
+    dunst
     kanshi
     wl-clipboard
     waybar
