@@ -80,6 +80,7 @@
           modules = [
             nixpkgsModule
             nixos-hardware.nixosModules.framework-12-13th-gen-intel
+            auto-cpufreq.nixosModules.default
             ./systems/sapphire/sapphire.nix
             home-manager.nixosModules.home-manager
             {

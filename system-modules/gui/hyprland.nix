@@ -14,12 +14,9 @@
 
   programs.regreet = {
     enable = true;
-    settings = {
-      background = {
-        path = "/home/anton/nextcloud/wallpaper/arch10.jpg";
-      };
-    };
   };
+
+  security.pam.services.greetd.kwallet.enable = true;
 
   # fonts
   fonts.packages = with pkgs; [
@@ -40,13 +37,20 @@
     wayland-protocols
     hyprland-protocols
     wayland-utils
+    adwaita-icon-theme
+    snixembed
     xwayland
     dunst
     kanshi
     wl-clipboard
     waybar
+    libsForQt5.qt5.qtwayland
+    kdePackages.qtwayland
+    kdePackages.kwalletmanager
     hyprpaper
     hyprshot
-    xdg-desktop-portal
+    copyq
+    hyprpolkitagent
+    xdg-desktop-portal-gtk
   ];
 }

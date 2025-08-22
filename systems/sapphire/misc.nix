@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   time.timeZone = "Europe/Berlin";
 
@@ -15,6 +20,10 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  services.openssh.enable = true;
-  services.fwupd.enable = true;
+  services.fwupd = {
+    enable = true;
+    extraRemotes = [ "lvfs-testing" ];
+    uefiCapsuleSettings.DisableCapsuleUpdateOnDisk = true;
+  };
+
 }

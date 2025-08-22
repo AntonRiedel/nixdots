@@ -4,7 +4,7 @@
     "height": 26,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "temperature", "clock", "tray"],
+    "modules-right": ["pulseaudio", "network", "temperature", "battery", "clock", "tray"],
 	"hyprland/workspaces": {
 	 "disable-scroll": true,
          "disable-markup" : false,
@@ -43,6 +43,15 @@
         "format-disconnected": "",
         "interval": 60,
 },
+    "battery": {
+	"bat": "BAT1",
+    	"interval": 60,
+    	"states": { "warning": 30, "critical": 15 },
+    	"format": "{icon} {capacity}% ({time})",
+	"format-time": "{H}:{m}",
+    	"format-icons": ["", "", "", "", ""],
+    	"max-length": 25
+},
     "temperature": {
         "hwmon-path" : "/sys/class/hwmon/hwmon0/temp2_input",
 	"format": " {temperatureC}°C",
@@ -51,7 +60,7 @@
     "pulseaudio": {
         "format": "  {volume}% ",
         "format-bluetooth": " {volume}% ",
-        "format-muted":" ",
+        "format-muted":"  ",
         "interval": 60,
         "format-icons": {
 	},

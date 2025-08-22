@@ -7,16 +7,24 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "ahci"
-    "usb_storage"
-    "sd_mod"
-    "rtsx_pci_sdmmc"
+    "xhci_pci" # USB3 controller
+    "ahci" # SATA controller
+    "nvme" # NVMe SSD (root disk on Framework)
+    "usb_storage" # USB drives
+    "sd_mod" # SCSI/SATA disks
+    "rtsx_pci_sdmmc" # SD card reader
   ];
-  # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "pinctrl_tigerlake" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.initrd.kernelModules = [
+    "i915" # Intel GPU (for early modesetting, avoids flicker)
+    "pinctrl_tigerlake" # Required quirk for Tiger Lake platform
+  ];
+  boot.kernelModules = [
+    "kvm-intel" # Virtualization
+    "iwlwifi" # Intel Wi-Fi
+    "snd_hda_intel" # Sound
+    "btusb" # Bluetooth
+  ];
+
   boot.extraModulePackages = [ ];
 }
