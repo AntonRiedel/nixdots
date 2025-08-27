@@ -25,24 +25,18 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgsConfig = {
-        inherit system;
-        config.allowUnfree = true;
-      };
-
-      nixpkgsModule = {
-        nixpkgs = {
-          inherit system;
-          config = pkgsConfig;
-        };
-      };
     in
     {
       nixosConfigurations = {
         diamond = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
-            nixpkgsModule
+            {
+              nixpkgs = {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            }
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-gpu-amd-sea-islands
             ./systems/diamond/diamond.nix
@@ -60,7 +54,12 @@
         ruby = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
-            nixpkgsModule
+            {
+              nixpkgs = {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            }
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
             auto-cpufreq.nixosModules.default
             ./systems/ruby/ruby.nix
@@ -78,7 +77,12 @@
         sapphire = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
-            nixpkgsModule
+            {
+              nixpkgs = {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            }
             nixos-hardware.nixosModules.framework-12-13th-gen-intel
             auto-cpufreq.nixosModules.default
             ./systems/sapphire/sapphire.nix
@@ -97,7 +101,7 @@
       homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          nixpkgsModule
+          nixpkgs
           ./systems/silver/silver.nix
         ];
       };
@@ -105,7 +109,7 @@
       homeConfigurations."ga45can@kta" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          nixpkgsModule
+          nixpkgs
           ./systems/kta/kta.nix
         ];
       };

@@ -9,7 +9,6 @@
     ./misc.nix
 
     # common modules
-    # ../../system-modules/gui/qtile.nix
     ../../system-modules/gui/hyprland.nix
     # ../../system-modules/printing/print-work.nix
     ../../system-modules/packages/packages.nix

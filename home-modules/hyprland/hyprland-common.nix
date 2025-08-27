@@ -21,7 +21,7 @@
         "dunst"
         "hyprpaper"
         "keepassxc"
-	"copyq --start-server"
+        "copyq --start-server"
       ];
 
       input = {
@@ -81,14 +81,14 @@
         "$mainMod SHIFT, Q, exit,"
         "$mainMod, R, exec, rofi -show run"
         "$mainMod, return, exec, ghostty"
-        "$mainMod, W, exec, brave"
-        "$mainMod SHIFT, W, exec, firefox"
+        "$mainMod, W, exec, firefox"
+        "$mainMod SHIFT, W, exec, brave"
         "$mainMod, E, exec, pcmanfm"
         "$mainMod, G, exec, keepmenu -C"
         "$mainMod Control_L, L, exec, hyprlock"
-        "$mainMod, PRINT, exec, hyprshot -m window"
-        ", PRINT, exec, hyprshot -m output"
-        "$mainMod SHIFT, PRINT, exec, hyprshot -m region"
+        "$mainMod, PRINT, exec, hyprshot -m region --clipboard-only"
+        # ", PRINT, exec, hyprshot -m output"
+        # "$mainMod SHIFT, PRINT, exec, hyprshot -m region"
         "$mainMod SHIFT, return, layoutmsg, swapwithmaster"
         "$mainMod, space, togglefloating,"
         "$mainMod, tab, fullscreen,"
