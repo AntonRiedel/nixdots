@@ -12,6 +12,7 @@
     pkgs.ghostty
 
     pkgs.qt6.full
+    pkgs.kdePackages.okular
     pkgs.pavucontrol
     pkgs.pulsemixer
 

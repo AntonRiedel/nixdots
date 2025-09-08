@@ -2,7 +2,7 @@ profile default {
 	output eDP-1 enable scale 1
 
 }profile home {
-	output eDP-1 disable
+	output eDP-1 enable scale 1
 	output HDMI-A-1 enable scale 1
 }
 
