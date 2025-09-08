@@ -7,7 +7,11 @@
 
     settings = {
 
-      xwayland.force_zero_scaling = true;
+      xwayland = {
+        enabled = true;
+        use_nearest_neighbor = true;
+        force_zero_scaling = false;
+      };
 
       env = [
         "GDK_SCALE,2"
@@ -22,6 +26,7 @@
         "hyprpaper"
         "keepassxc"
         "copyq --start-server"
+        "iio-hyprland"
       ];
 
       input = {
@@ -35,25 +40,24 @@
       };
 
       general = {
-        gaps_in = 1;
-        gaps_out = 1;
-        border_size = 1;
-        # col.active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        # col.inactive_border = "rgba(595959aa)";
+        gaps_in = 0;
+        gaps_out = 0;
+        border_size = 3;
+        # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgba(ff0000ee) rgba(800000ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
         layout = "master";
         allow_tearing = false;
       };
 
       decoration = {
         rounding = 5;
-
         blur = {
           enabled = true;
           size = 3;
           passes = 1;
         };
-
-        shadow.enabled = true;
+        shadow.enabled = false;
       };
 
       animations = {
@@ -65,7 +69,10 @@
         mfact = 0.55;
       };
 
-      gestures.workspace_swipe = "off";
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_cancel_ratio = 0.15;
+      };
 
       misc = {
         force_default_wallpaper = 0;

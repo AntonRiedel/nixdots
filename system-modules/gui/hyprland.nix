@@ -37,11 +37,14 @@
     wayland-protocols
     hyprland-protocols
     wayland-utils
+    iio-sensor-proxy
+    iio-hyprland
     adwaita-icon-theme
     snixembed
     xwayland
     dunst
     kanshi
+    jq
     wl-clipboard
     waybar
     libsForQt5.qt5.qtwayland
