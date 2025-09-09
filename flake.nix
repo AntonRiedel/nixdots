@@ -100,7 +100,7 @@
 
       homeConfigurations."anton@silver" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages.${system}; # Make sure to pass pkgs here
+        pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           ./systems/silver/silver.nix
         ];
@@ -108,9 +108,8 @@
 
       homeConfigurations."ga45can@kta" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages.${system}; # Make sure to pass pkgs here
+        pkgs = nixpkgs.legacyPackages.${system}; 
         modules = [
-          nixpkgs
           ./systems/kta/kta.nix
         ];
       };
