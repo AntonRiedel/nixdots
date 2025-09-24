@@ -61,7 +61,7 @@
               };
             }
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
-            auto-cpufreq.nixosModules.default
+            # auto-cpufreq.nixosModules.default
             ./systems/ruby/ruby.nix
             home-manager.nixosModules.home-manager
             {
@@ -108,7 +108,7 @@
 
       homeConfigurations."ga45can@kta" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages.${system}; 
+        pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           ./systems/kta/kta.nix
         ];

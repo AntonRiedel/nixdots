@@ -16,6 +16,7 @@
     ../../home-modules/ghostty/ghostty.nix
     ../../home-modules/gpg/gpg.nix
     ../../home-modules/keepassxc/keepassxc.nix
+    ../../home-modules/cernbox/cernbox.nix
 
     ../../home-modules/fzf/fzf.nix
     ../../home-modules/tmux/tmux.nix

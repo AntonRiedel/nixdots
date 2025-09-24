@@ -32,5 +32,6 @@
     root
     entr
     cpplint
+    appimage-run
   ];
 }
