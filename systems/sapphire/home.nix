@@ -22,6 +22,7 @@
     ../../home-modules/fzf/fzf.nix
     ../../home-modules/neovim/neovim.nix
     ../../home-modules/keepassxc/keepassxc.nix
+    ../../home-modules/cernbox/cernbox.nix
   ];
 
   # Let Home Manager install and manage itself.
