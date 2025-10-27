@@ -23,9 +23,6 @@
   ];
 
   programs.direnv.enable = true;
-  home.sessionVariables = {
-    ALICE = "~/alice";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

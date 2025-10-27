@@ -25,7 +25,7 @@
       historyFile = "$HOME/.config/bash_history";
       historyControl = [
         "erasedups"
-        "ignoreboth"
+        "ignorespace"
       ];
       historyIgnore = [
         "ls"

@@ -14,9 +14,10 @@
       };
 
       env = [
-        "GDK_SCALE,2"
-        "XCURSOR_SIZE,16"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        "GDK_SCALE=2"
+        "XCURSOR_SIZE=16"
+        "ELECTRON_OZONE_PLATFORM_HINT=wayland"
+        "MOZ_ENABLE_WAYLAND=1"
       ];
 
       exec-once = [
