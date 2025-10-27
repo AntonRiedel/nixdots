@@ -14,6 +14,7 @@
 
   imports = [
     ../../home-modules/shell/bash.nix
+    ../../home-modules/shell/bash-alice.nix
     ../../home-modules/shell/alias.nix
     ../../home-modules/packages/cli-packages.nix
     ../../home-modules/neovim/neovim.nix
