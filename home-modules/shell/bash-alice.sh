@@ -113,7 +113,7 @@ load() {
   cd - >/dev/null || return 1
 
   # Construct environment name
-  env_name="${package}-latest-${branch}-o2"
+  env_name="${package}/latest-${branch}-o2"
 
   echo "→ Entering environment: $env_name"
   sleep 0.2
