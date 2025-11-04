@@ -4,6 +4,7 @@
     settings = {
       monitor = [
         "eDP-1,preferred,auto,2,transform,0"
+        "DP-4,preferred,auto,2,mirror,eDP-1"
       ];
 
       plugin.touch_gestures = {
