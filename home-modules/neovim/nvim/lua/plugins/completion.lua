@@ -10,7 +10,6 @@ return {
 		"neovim/nvim-lspconfig",
 	},
 	{
-
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
@@ -31,16 +30,21 @@ return {
 				"rust_analyzer",
 				"ansiblels",
 			}
+
 			local capabilities =
 				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-			for _, lsp in pairs(servers) do
-				require("lspconfig")[lsp].setup({ on_attach = on_attach, capabilities = capabilities })
+
+			for _, lsp in ipairs(servers) do
+				vim.lsp.config(lsp, {
+					on_attach = on_attach, -- define this somewhere in your config
+					capabilities = capabilities,
+				})
+				vim.lsp.enable(lsp)
 			end
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
+
 			cmp.setup({
 				snippet = {
 					expand = function(args)
@@ -85,9 +89,5 @@ return {
 				},
 			})
 		end,
-		-- 		vim.cmd([[
-		--      set completeopt=menuone,noinsert,noselect
-		--    ]])
-		-- 	end,
 	},
 }
