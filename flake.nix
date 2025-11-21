@@ -7,10 +7,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # auto-cpufreq = {
+    #   url = "github:AdnanHodzic/auto-cpufreq";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
@@ -19,7 +19,7 @@
       self,
       nixpkgs,
       home-manager,
-      auto-cpufreq,
+      # auto-cpufreq,
       nixos-hardware,
       ...
     }@inputs:
