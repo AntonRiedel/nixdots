@@ -1,10 +1,11 @@
 { ... }:
 {
   programs = {
+    delta.enable = true;
+    delta.enableGitIntegration = true;
     git = {
       enable = true;
-      delta.enable = true;
-      extraConfig = {
+      settings = {
         user = {
           name = "Anton Riedel";
           email = "anton.riedel@tum.de";

@@ -11,15 +11,13 @@
     # pkgs.kitty
     pkgs.ghostty
 
-    pkgs.qt6.full
     pkgs.kdePackages.okular
     pkgs.pavucontrol
     pkgs.pulsemixer
 
     pkgs.zoom-us
 
-    pkgs.rofi-wayland
-    # pkgs.rofi
+    pkgs.rofi
 
     # pkgs.passff-host
     pkgs.thunderbird
