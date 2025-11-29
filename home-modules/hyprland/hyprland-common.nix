@@ -70,11 +70,6 @@
         mfact = 0.55;
       };
 
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_cancel_ratio = 0.15;
-      };
-
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
