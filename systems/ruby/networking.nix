@@ -1,6 +1,11 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
   networking.hostName = "Ruby";
-  networking.networkmanager.enable = true;
+
+  networking.networkmanager = {
+    enable = true;
+    plugins = [ pkgs.networkmanager-openvpn ];
+  };
+
   programs.nm-applet.enable = true;
 }

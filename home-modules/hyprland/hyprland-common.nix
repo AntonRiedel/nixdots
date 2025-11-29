@@ -1,9 +1,18 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
+
+  # home.packages = with pkgs; [
+  #   hyprlandPlugins.hyprsplit
+  # ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
     portalPackage = null;
+
+    plugins = [
+      pkgs.hyprlandPlugins.hyprsplit
+    ];
 
     settings = {
 
@@ -78,6 +87,12 @@
         swallow_regex = "^(kitty|com\.mitchellh\.ghostty)$";
       };
 
+      plugin = {
+        hyprsplit = {
+          num_workspaces = 9;
+        };
+      };
+
       # Keybinds
       bind = [
         "$mainMod SHIFT, C, killactive,"
@@ -87,7 +102,7 @@
         "$mainMod, W, exec, firefox"
         "$mainMod SHIFT, W, exec, brave"
         "$mainMod, E, exec, pcmanfm"
-        "$mainMod, G, exec, keepmenu -C"
+        # "$mainMod, G, exec, keepmenu -C"
         "$mainMod Control_L, L, exec, hyprlock"
         "$mainMod, PRINT, exec, hyprshot -m region --clipboard-only"
         # ", PRINT, exec, hyprshot -m output"
@@ -103,24 +118,25 @@
         "$mainMod, l, layoutmsg, mfact +0.1"
         "$mainMod, comma, focusmonitor, -1"
         "$mainMod, period, focusmonitor, +1"
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod, 1, split:workspace, 1"
+        "$mainMod, 2, split:workspace, 2"
+        "$mainMod, 3, split:workspace, 3"
+        "$mainMod, 4, split:workspace, 4"
+        "$mainMod, 5, split:workspace, 5"
+        "$mainMod, 6, split:workspace, 6"
+        "$mainMod, 7, split:workspace, 7"
+        "$mainMod, 8, split:workspace, 8"
+        "$mainMod, 9, split:workspace, 9"
+        "$mainMod SHIFT, 1, split:movetoworkspace, 1"
+        "$mainMod SHIFT, 2, split:movetoworkspace, 2"
+        "$mainMod SHIFT, 3, split:movetoworkspace, 3"
+        "$mainMod SHIFT, 4, split:movetoworkspace, 4"
+        "$mainMod SHIFT, 5, split:movetoworkspace, 5"
+        "$mainMod SHIFT, 6, split:movetoworkspace, 6"
+        "$mainMod SHIFT, 7, split:movetoworkspace, 7"
+        "$mainMod SHIFT, 8, split:movetoworkspace, 8"
+        "$mainMod SHIFT, 9, split:movetoworkspace, 9"
+        "$mainMod, g, split:grabroguewindows"
       ];
 
       binde = [
