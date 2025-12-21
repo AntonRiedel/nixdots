@@ -1,12 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   networking.hostName = "diamond"; # Define your hostname.
   networking.networkmanager = {
     enable = true;
-    plugins = with pkgs; [
-      networkmanager-openvpn
-    ];
+    plugins = [ pkgs.networkmanager-openvpn ];
   };
+
   programs.nm-applet.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Configure network proxy if necessary
