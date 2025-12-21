@@ -8,7 +8,10 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  services.xserver.videoDrivers = [ "amdgpu" "displaylink" "modesetting" ];
+  services.xserver.videoDrivers = [
+    "amdgpu"
+    "modesetting"
+  ];
 
   security.rtkit.enable = true;
   services.pipewire = {

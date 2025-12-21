@@ -51,6 +51,7 @@
     kdePackages.qtwayland
     kdePackages.kwalletmanager
     hyprpaper
+    nwg-displays
     hyprshot
     copyq
     hyprpolkitagent
