@@ -33,5 +33,6 @@
     entr
     cpplint
     appimage-run
+    devbox
   ];
 }
