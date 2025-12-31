@@ -14,6 +14,10 @@
       pkgs.hyprlandPlugins.hyprsplit
     ];
 
+    extraConfig = ''
+      source = ~/.config/hypr/monitors.conf
+    '';
+
     settings = {
 
       xwayland = {

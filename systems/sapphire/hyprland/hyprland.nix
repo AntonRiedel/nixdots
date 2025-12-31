@@ -2,18 +2,10 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      monitor = [
-        "eDP-1,preferred,auto,2,transform,0"
-        "DP-4,preferred,auto,2,mirror,eDP-1"
-      ];
-
       plugin.touch_gestures = {
         sensitivity = 4;
         workspace_swipe_fingers = 3;
       };
-      # exec-once = [
-      #   "iio-hyprland"
-      # ];
     };
     plugins = [
       pkgs.hyprlandPlugins.hyprgrass
@@ -22,8 +14,6 @@
     ];
 
   };
-
   xdg.configFile."waybar/config".source = ./waybar/config;
   xdg.configFile."waybar/style.css".source = ./waybar/style.css;
-  xdg.configFile."kanshi/config".source = ./kanshi/config;
 }
