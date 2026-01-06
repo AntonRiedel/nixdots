@@ -15,6 +15,7 @@
     ../../system-modules/packages/extra-packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
     ../../system-modules/virtualization/virtualization.nix
+    ../../system-modules/tailscale/tailscale.nix
   ];
 
   environment.systemPackages = with pkgs; [
