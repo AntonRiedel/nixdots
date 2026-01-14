@@ -14,6 +14,12 @@
 
   programs.regreet = {
     enable = true;
+    settings = {
+      background = {
+        path = "/home/anton/nextcloud/wallpaper/horizon2.jpg";
+        fit = "Contain";
+      };
+    };
   };
 
   # security.pam.services.greetd.kwallet.enable = true;
