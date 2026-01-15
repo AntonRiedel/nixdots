@@ -16,8 +16,8 @@
     enable = true;
     settings = {
       background = {
-        path = "/home/anton/nextcloud/wallpaper/horizon2.jpg";
-        fit = "Contain";
+        path = "/home/anton/nextcloud/wallpaper/wallpaper.png";
+	fit = "fill";
       };
     };
   };

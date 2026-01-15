@@ -18,8 +18,9 @@
     ../../system-modules/gui/hyprland.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
-    ../../system-modules/flatpak/flatpak.nix
+    # ../../system-modules/flatpak/flatpak.nix
     # ../../system-modules/auto-cpufreq/auto-cpufreq.nix
+    ../../system-modules/tailscale/tailscale.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
