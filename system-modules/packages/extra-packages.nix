@@ -4,6 +4,7 @@
     lutris
     mangohud
     cool-retro-term
+    bambu-studio
   ];
 
   programs.steam = {
