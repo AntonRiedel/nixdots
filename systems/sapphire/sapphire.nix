@@ -15,7 +15,8 @@
     ./misc.nix
 
     # common modules
-    ../../system-modules/gui/hyprland.nix
+    # ../../system-modules/gui/hyprland.nix
+    ../../system-modules/gui/gnome.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
     # ../../system-modules/flatpak/flatpak.nix

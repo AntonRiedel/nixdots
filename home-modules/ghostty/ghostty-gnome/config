@@ -1,0 +1,6 @@
+confirm-close-surface = false
+theme = "Solarized Dark Higher Contrast"
+font-family = Fira Code
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig

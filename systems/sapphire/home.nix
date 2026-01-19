@@ -15,7 +15,7 @@
     ./hyprland/hyprland.nix
     ../../home-modules/cursor/cursor.nix
 
-    ../../home-modules/ghostty/ghostty.nix
+    ../../home-modules/ghostty/ghostty-gnome.nix
     ../../home-modules/shell/alias.nix
     ../../home-modules/shell/bash.nix
     ../../home-modules/tmux/tmux.nix
