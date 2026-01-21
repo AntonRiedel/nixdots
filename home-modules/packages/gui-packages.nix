@@ -5,10 +5,8 @@
 {
   home.packages = [
     pkgs.firefox
-    # pkgs.chromium
     pkgs.brave
     pkgs.qutebrowser
-    # pkgs.kitty
     pkgs.ghostty
 
     pkgs.kdePackages.okular
@@ -29,18 +27,12 @@
 
     pkgs.tigervnc
 
-    # pkgs.grim
-    # pkgs.slurp
-    # pkgs.swappy
-
     pkgs.scrcpy
     pkgs.zathura
-    # pkgs.kdePackages.okular
     pkgs.pcmanfm
     pkgs.libreoffice
     pkgs.imagemagick
     pkgs.xournalpp
-    pkgs.rnote
   ];
 
 }
