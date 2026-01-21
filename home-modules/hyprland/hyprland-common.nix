@@ -108,7 +108,7 @@
         "$mainMod, E, exec, pcmanfm"
         # "$mainMod, G, exec, keepmenu -C"
         "$mainMod Control_L, L, exec, hyprlock"
-	"$mainMod, PRINT, exec, grim -g '$(slurp)' - | swappy -f -"
+	"$mainMod, PRINT, exec, grim -g \"$(slurp)\" - | swappy -f -"
         # ", PRINT, exec, hyprshot -m output"
         # "$mainMod SHIFT, PRINT, exec, hyprshot -m region"
         "$mainMod SHIFT, return, layoutmsg, swapwithmaster"
