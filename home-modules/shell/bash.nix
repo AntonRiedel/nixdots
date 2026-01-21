@@ -12,7 +12,7 @@
         if (env | grep -Fq 'CONTAINER_ID'); then
         PS1="($CONTAINER_ID)$PS1"
         export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-        export LD_LIBRARY_PATH="$(/home/anton/nextcloud/PhD/ALICE/analysis/CATS/DLM/install/bin/cats-config --libdir):$LD_LIBRARY_PATH"
+        # export LD_LIBRARY_PATH="$(/home/anton/nextcloud/PhD/ALICE/analysis/CATS/DLM/install/bin/cats-config --libdir):$LD_LIBRARY_PATH"
         fi
       '';
       shellOptions = [

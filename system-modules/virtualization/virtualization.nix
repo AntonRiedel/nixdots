@@ -20,6 +20,10 @@
     dockerCompat = true;
   };
 
+  environment.variables = {
+    CONTAINERS_DATABASE_BACKEND = "sqlite";
+  };
+
   environment.systemPackages = with pkgs; [
     virt-manager
     virtiofsd
