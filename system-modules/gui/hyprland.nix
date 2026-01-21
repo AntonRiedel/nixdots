@@ -17,7 +17,7 @@
     settings = {
       background = {
         path = "/home/anton/nextcloud/wallpaper/wallpaper.png";
-	fit = "fill";
+        fit = "fill";
       };
     };
   };
@@ -39,7 +39,6 @@
 
   environment.systemPackages = with pkgs; [
     wayland
-    wlr-randr
     wayland-protocols
     hyprland-protocols
     wayland-utils
@@ -50,17 +49,16 @@
     xwayland
     dunst
     kanshi
-    jq
     wl-clipboard
     waybar
     libsForQt5.qt5.qtwayland
     kdePackages.qtwayland
-    kdePackages.kwalletmanager
     hyprpaper
     nwg-displays
-    hyprshot
     copyq
-    hyprpolkitagent
     xdg-desktop-portal-gtk
+    grim
+    slurp
+    swappy
   ];
 }
