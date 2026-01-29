@@ -27,6 +27,8 @@
 
     pkgs.tigervnc
 
+    pkgs.pomodoro-gtk
+
     pkgs.scrcpy
     pkgs.zathura
     pkgs.pcmanfm
