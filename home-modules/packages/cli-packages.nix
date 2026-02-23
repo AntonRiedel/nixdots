@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    fastfetch
     htop
     fd
     pik
@@ -12,7 +11,6 @@
     sshpass
     zip
     unzip
-    stow
     stylua
     shfmt
     fira-code
@@ -29,10 +27,6 @@
     perl538Packages.LatexIndent
     nodePackages.bash-language-server
     nixd
-    root
-    entr
     cpplint
-    appimage-run
-    devbox
   ];
 }

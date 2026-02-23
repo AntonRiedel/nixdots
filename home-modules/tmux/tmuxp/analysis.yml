@@ -1,10 +1,15 @@
 session_name: analysis
 windows:
-  - window_name: ALICE
+  - window_name: nix
+    panes:
+      - shell_command: devEnv
+  - window_name: alice
     panes:
       - shell_command: distrobox enter alice
-
-  - window_name: ALIEN
+  - window_name: alien
     panes:
       - shell_command: distrobox enter alice -- bash -c 'cd $HOME/alice && alienv enter JAliEn-ROOT/latest; exec bash'
-  - window_name: LOCAL
+  - window_name: cernbox
+    panes:
+      - shell_command: distrobox enter alice -- bash -c 'cernbox; exec bash'
+  - window_name: local

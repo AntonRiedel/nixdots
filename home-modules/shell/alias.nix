@@ -1,6 +1,7 @@
 { ... }:
 {
   home.shellAliases = {
+    devEnv = "nix develop $HOME/cernbox/devEnvs/default";
     ls = "ls --color";
     ll = "ls -la";
     tt = "trash put";
