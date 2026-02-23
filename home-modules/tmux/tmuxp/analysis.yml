@@ -1,20 +1,10 @@
-session_name: o2
+session_name: analysis
 windows:
-  - window_name: jupyter
+  - window_name: ALICE
     panes:
-      - shell_command:
-          - cd ${ANALYSIS}
-          - jupyter lab
-  - window_name: alien
+      - shell_command: distrobox enter alice
+
+  - window_name: ALIEN
     panes:
-      - shell_command:
-          - cd ${ALICE}
-          - distrobox enter Alice
-          - alienv enter xjalienfs/latest ROOT/latest --shellrc
-          - cd ${ANALYSIS}
-  - window_name: browser
-      - shell_command:
-          - cd ${ANALYSIS}
-  - window_name: local
-      - shell_command:
-          - cd ${ANALYSIS}
+      - shell_command: distrobox enter alice -- bash -c 'cd $HOME/alice && alienv enter JAliEn-ROOT/latest; exec bash'
+  - window_name: LOCAL

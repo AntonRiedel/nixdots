@@ -10,12 +10,12 @@ windows:
   - window_name: build
     panes:
       - shell_command:
-          - while sleep 0.1; do find ${ALICE}/O2Physics/ ${ALICE}/O2 | entr -pc aliBuild build O2Physics --debug ; done
+          - while sleep 0.1; do find ${ALICE}/O2Physics/ ${ALICE}/O2 | entr -pc O2PHYSICS_COMPONENTS="PWGLF/install PWGCF/install EventFiltering/install Tools/install Common/install" aliBuild build O2Physics --debug ; done
   - window_name: env
     panes:
       - shell_command:
           - sleep 10s
-          - alienv enter O2Physics/latest --shellrc
+          - alienv enter O2Physics/latest
           - cd
           - clear
   - window_name: local
