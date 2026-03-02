@@ -48,8 +48,10 @@ recompile() {
 
 	echo "Recompiling ${package}_${branch}_${target_name}..."
 	start="$(date +%s)"
-	ninja "${target}install" >"$log" 2>&1
-	ec=$?
+	ninja $verbose "${target}install" 2>&1 | tee "$log"
+	ec=${PIPESTATUS[0]}
+	# ninja "${target}install" >"$log" 2>&1
+	# ec=$?
 	end="$(date +%s)"
 
 	echo "Compilation exited with: $ec"
