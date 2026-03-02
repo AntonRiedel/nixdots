@@ -48,7 +48,8 @@ recompile() {
 
 	echo "Recompiling ${package}_${branch}_${target_name}..."
 	start="$(date +%s)"
-	ninja $verbose "${target}install" 2>&1 | tee "$log"
+	export NINJA_STATUS="[%f/%t (%p%%)] "
+	ninja -v "${target}install" 2>&1 | tee "$log"
 	ec=${PIPESTATUS[0]}
 	# ninja "${target}install" >"$log" 2>&1
 	# ec=$?
