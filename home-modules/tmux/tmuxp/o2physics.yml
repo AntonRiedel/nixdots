@@ -10,7 +10,8 @@ windows:
   - window_name: build
     panes:
       - shell_command:
-          - while sleep 0.1; do find ${ALICE}/O2Physics/ ${ALICE}/O2 | entr -pc O2PHYSICS_COMPONENTS="PWGLF/install PWGCF/install EventFiltering/install Tools/install Common/install" aliBuild build O2Physics --debug ; done
+          - export O2PHYSICS_COMPONENTS="PWGLF/install PWGCF/install EventFiltering/install Tools/install Common/install"
+          - find ${ALICE}/O2Physics ${ALICE}/O2 -type f | entr -pc aliBuild build O2Physics --debug
   - window_name: env
     panes:
       - shell_command:
