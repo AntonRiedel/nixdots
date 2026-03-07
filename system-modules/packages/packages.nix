@@ -11,8 +11,8 @@
     # hardware
     pkgs.lm_sensors
     pkgs.brightnessctl
-    pkgs.acpid
-    pkgs.acpi
+    # pkgs.acpid
+    # pkgs.acpi
     pkgs.pciutils
     pkgs.iio-sensor-proxy
   ];
