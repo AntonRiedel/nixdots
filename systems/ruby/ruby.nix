@@ -10,11 +10,9 @@
 
     # common modules
     ../../system-modules/gui/niri.nix
-    # ../../system-modules/gui/hyprland.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
     ../../system-modules/virtualization/virtualization.nix
-    # ../../system-modules/auto-cpufreq/auto-cpufreq.nix
     ../../system-modules/tailscale/tailscale.nix
   ];
 

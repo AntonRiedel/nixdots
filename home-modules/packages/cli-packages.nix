@@ -7,8 +7,10 @@
     procs
     ripgrep
     trash-cli
+    buku
     xdg-utils
     sshpass
+    yazi
     zip
     unzip
     stylua

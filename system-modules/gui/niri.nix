@@ -46,15 +46,11 @@
     grim
     slurp
     swappy
+    cliphist
+    nwg-clipman
 
     # monitor management
     kanshi
-
-    # tray support
-    snixembed
-
-    # clipboard manager
-    copyq
 
     # portals
     xdg-desktop-portal-gtk

@@ -8,15 +8,13 @@
 
   imports = [
     # common modules
+    ../../home-modules/niri/niri.nix
     ../../home-modules/packages/cli-packages.nix
     ../../home-modules/packages/gui-packages.nix
     ../../home-modules/cursor/cursor.nix
-    # ../../home-modules/hyprland/hyprland-common.nix
-    # ./hyprland/hyprland.nix
     ../../home-modules/ghostty/ghostty.nix
-    ../../home-modules/gpg/gpg.nix
+    # ../../home-modules/gpg/gpg.nix
     ../../home-modules/keepassxc/keepassxc.nix
-    # ../../home-modules/cernbox/cernbox.nix
 
     ../../home-modules/fzf/fzf.nix
     ../../home-modules/tmux/tmux.nix
