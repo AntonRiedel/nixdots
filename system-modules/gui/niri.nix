@@ -24,6 +24,7 @@
   ];
 
   services.tlp.enable = false; # Disable TLP
+  services.gnome.gnome-keyring.enable = false; # Disable gnome keyring
   services.tuned.enable = true;
   services.upower.enable = true;
 

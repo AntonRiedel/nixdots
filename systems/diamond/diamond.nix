@@ -10,7 +10,7 @@
     ./misc.nix
 
     # common modules
-    ../../system-modules/gui/hyprland.nix
+    ../../system-modules/gui/niri.nix
     ../../system-modules/packages/packages.nix
     ../../system-modules/packages/extra-packages.nix
     ../../system-modules/dual-function-keys/dual-function-keys.nix
