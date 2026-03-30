@@ -37,6 +37,7 @@
     xwayland-satellite
 
     swaybg
+    wl-mirror
 
     # hardware sensors
     iio-sensor-proxy

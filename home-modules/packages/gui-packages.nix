@@ -26,6 +26,7 @@
     pkgs.sxiv
 
     pkgs.tigervnc
+    pkgs.remmina
 
     pkgs.pomodoro-gtk
 
