@@ -5,3 +5,6 @@ font-family = Fira Code
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+clipboard-read = allow
+clipboard-write = allow
+
