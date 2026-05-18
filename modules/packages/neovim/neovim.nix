@@ -39,7 +39,10 @@
 
       home.packages = with pkgs.unstable; [
         tree-sitter
-	# fzf
+        python3Minimal
+        lua51Packages.lua
+        lua51Packages.luarocks
+        # fzf
       ];
 
       xdg.configFile."nvim" = {

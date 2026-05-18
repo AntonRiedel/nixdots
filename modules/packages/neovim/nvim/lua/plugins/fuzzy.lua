@@ -1,6 +1,7 @@
 return {
 	"ibhagwan/fzf-lua",
 	lazy = false,
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
 			winopts = {
@@ -9,8 +10,6 @@ return {
 				preview = { layout = "vertical" },
 			},
 		})
-
-		-- same keymaps you likely had in telescope
 		vim.keymap.set("n", "<leader>ff", require("fzf-lua").files, { desc = "Find files" })
 		vim.keymap.set("n", "<leader>fg", require("fzf-lua").live_grep, { desc = "Live grep" })
 		vim.keymap.set("n", "<leader>fb", require("fzf-lua").buffers, { desc = "Buffers" })
