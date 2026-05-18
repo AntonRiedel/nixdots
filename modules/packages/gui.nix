@@ -16,13 +16,9 @@
         libreoffice
         imagemagick
 
-        # communication
-        thunderbird
-
         # productivity
         rofi
         newsboat
-        eduvpn-client
 	openpomodoro-cli
 
         # file management
@@ -31,7 +27,6 @@
 
         # remote & connectivity
         tigervnc
-        remmina
         nextcloud-client
 
         # misc

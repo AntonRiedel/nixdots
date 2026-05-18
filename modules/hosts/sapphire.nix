@@ -77,6 +77,7 @@ in
         hm.gui-packages
         hm.cli-packages
         hm.dev-packages
+        hm.work-packages
       ];
     };
   };
