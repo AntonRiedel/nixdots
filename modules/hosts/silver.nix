@@ -7,7 +7,7 @@ in
     pkgs = config.pkgs;
     extraSpecialArgs = { inherit inputs; };
     modules = [
-      hm.ga45can
+      hm.anton
       hm.bash
       hm.tmux
       hm.fzf
