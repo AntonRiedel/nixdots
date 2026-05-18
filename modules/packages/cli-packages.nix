@@ -10,6 +10,7 @@
         ripgrep
         trash-cli
         yazi
+	git
         zip
         unzip
       ];

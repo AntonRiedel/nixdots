@@ -3,7 +3,7 @@ let
   hm = config.flake.modules.homeManager;
 in
 {
-  configurations.homeManager."anton@silver" = inputs.home-manager.lib.homeManagerConfiguration {
+  configurations.homeManager."ga45can@kta" = inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = config.pkgs;
     extraSpecialArgs = { inherit inputs; };
     modules = [
