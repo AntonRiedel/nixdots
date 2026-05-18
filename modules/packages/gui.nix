@@ -22,7 +22,8 @@
         # productivity
         rofi
         newsboat
-        pomodoro-gtk
+        eduvpn-client
+	openpomodoro-cli
 
         # file management
         pcmanfm
