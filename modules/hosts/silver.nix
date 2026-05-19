@@ -11,6 +11,7 @@ in
       hm.bash
       hm.tmux
       hm.fzf
+      hm.git
       hm.neovim
       hm.cli-packages
       {

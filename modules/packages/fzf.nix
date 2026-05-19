@@ -1,4 +1,3 @@
-# home-modules/fzf/fzf.nix
 { ... }:
 {
   flake.modules.homeManager.fzf =

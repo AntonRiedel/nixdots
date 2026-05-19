@@ -1,18 +1,24 @@
-{ config, inputs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  ...
+}:
 let
   nixos = config.flake.modules.nixos;
   hm = config.flake.modules.homeManager;
 in
 {
-  configurations.nixos.sapphire.module = {
+  configurations.nixos.ruby.module = {
     imports = [
 
       inputs.home-manager.nixosModules.home-manager
 
       # hardware settings
-      inputs.nixos-hardware.nixosModules.framework-12-13th-gen-intel
+      inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
+
       nixos.boot
-      nixos.sapphire-filesystem
+      nixos.ruby-filesystem
       nixos.networkmanager
       nixos.audio
       nixos.bluetooth
@@ -38,26 +44,25 @@ in
     ];
 
     # host settings h
-    networking.hostName = "sapphire";
+    networking.hostName = "ruby";
+
+    # fix during next reinstall
+    boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
 
     boot.initrd.availableKernelModules = [
-      "xhci_pci" # USB3 controller
-      "ahci" # SATA controller
-      "nvme" # NVMe SSD (root disk on Framework)
-      "usb_storage" # USB drives
-      "sd_mod" # SCSI/SATA disks
-      "rtsx_pci_sdmmc" # SD card reader
+      "nvme"
+      "xhci_pci"
+      "usb_storage"
+      "sd_mod"
+      "rtsx_pci_sdmmc"
+      "btrfs"
     ];
+
+    boot.initrd.systemd.enable = true;
     boot.initrd.kernelModules = [
-      "i915" # Intel GPU (for early modesetting, avoids flicker)
-      "pinctrl_tigerlake" # Required quirk for Tiger Lake platform
+      "amdgpu"
     ];
-    boot.kernelModules = [
-      "kvm-intel" # Virtualization
-      "iwlwifi" # Intel Wi-Fi
-      "snd_hda_intel" # Sound
-      "btusb" # Bluetooth
-    ];
+    boot.kernelModules = [ "kvm-amd" ];
 
     hardware.enableRedistributableFirmware = true;
     hardware.cpu.amd.updateMicrocode = true;
