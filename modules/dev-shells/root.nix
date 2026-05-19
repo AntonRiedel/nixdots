@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.devShells.x86_64-linux.default =
+  flake.devShells.x86_64-linux.root =
     let
       pkgs = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
       python = pkgs.python3.withPackages (
@@ -20,10 +20,13 @@
     pkgs.mkShell {
       packages = [
         pkgs.root
+        pkgs.jq
+        pkgs.just
+        pkgs.clang-tools
+        pkgs.cpplint
+        pkgs.cppcheck
         python
         tex
-        jq
-        just
       ];
       shellHook = ''
         export PYTHONPATH="${pkgs.root}/lib:$PYTHONPATH"

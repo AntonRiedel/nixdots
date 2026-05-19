@@ -76,6 +76,7 @@ in
         hm.audio
         hm.ghostty
         hm.bash
+        hm.alias
         hm.tmux
         hm.fzf
         hm.git

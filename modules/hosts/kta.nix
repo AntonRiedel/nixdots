@@ -9,6 +9,7 @@ in
     modules = [
       hm.ga45can
       hm.bash
+      hm.alias
       hm.tmux
       hm.fzf
       hm.neovim

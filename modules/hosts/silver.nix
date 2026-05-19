@@ -9,6 +9,7 @@ in
     modules = [
       hm.anton
       hm.bash
+      hm.alias
       hm.tmux
       hm.fzf
       hm.git

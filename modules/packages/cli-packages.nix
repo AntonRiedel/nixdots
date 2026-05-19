@@ -7,7 +7,7 @@
         htop
         fd
         ripgrep
-        trash-cli
+        rip2
         yazi
         zip
         unzip

@@ -4,8 +4,6 @@
     devEnv = "nix develop $HOME/cernbox/devEnvs/default";
     ls = "ls --color";
     ll = "ls -la";
-    tt = "trash put";
-    tr = "trash list | fzf --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs trash restore --match=exact --force";
     sshc = ''
       ssh "$(grep -r "^Host " $HOME/.ssh/config.d | grep -v "git\|\*" | uniq | awk '{print $2}' | fzf --prompt="Connect to host: ")"
     '';
