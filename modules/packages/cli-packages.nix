@@ -1,4 +1,3 @@
-# home-modules/packages/cli-packages.nix
 { ... }:
 {
   flake.modules.homeManager.cli-packages =
