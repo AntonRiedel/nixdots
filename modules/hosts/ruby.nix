@@ -28,6 +28,7 @@ in
       nixos.nix-settings
       nixos.nixpkgs
       nixos.home-manager-defaults
+      nixos.nh
 
       # user settings
       nixos.user-anton

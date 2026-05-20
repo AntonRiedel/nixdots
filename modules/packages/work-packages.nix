@@ -9,6 +9,7 @@
         mattermost-desktop
         eduvpn-client
         remmina
+	zoom-us
       ];
     };
 }
