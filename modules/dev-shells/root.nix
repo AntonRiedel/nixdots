@@ -25,6 +25,8 @@
         pkgs.clang-tools
         pkgs.cpplint
         pkgs.cppcheck
+        pkgs.black
+        pkgs.shfmt
         python
         tex
       ];
