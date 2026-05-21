@@ -86,6 +86,8 @@ hl.config({
 	misc = {
 		force_default_wallpaper = 0,
 		disable_hyprland_logo = true,
+		enable_swallow = true,
+		swallow_regex = "^(kitty|com.mitchellh.ghostty)$",
 	},
 })
 
@@ -130,9 +132,8 @@ hl.bind(mod .. " + Print", hl.dsp.exec_cmd(screenshot))
 
 -- Window management
 hl.bind(mod .. " + SHIFT + C", hl.dsp.window.close())
-hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mod .. " + Tab", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 
 -- Focus (vim keys)
 hl.bind(mod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -162,10 +163,6 @@ end
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
--- Scratchpad
-hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
 -- Mouse binds
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
@@ -191,7 +188,7 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Quit
-hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
+hl.bind(mod .. " + CTRL + Q", hl.dsp.exit())
 
 ---------------------
 ---- WINDOW RULES ----

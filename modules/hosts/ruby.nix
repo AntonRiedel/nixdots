@@ -82,6 +82,7 @@ in
         hm.fzf
         hm.git
         hm.neovim
+        hm.cernbox
         hm.gui-packages
         hm.cli-packages
         hm.dev-packages
