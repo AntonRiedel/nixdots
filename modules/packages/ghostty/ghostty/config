@@ -1,6 +1,8 @@
 window-decoration = false
 confirm-close-surface = false
 clipboard-paste-protection = false
+clipboard-read = true
+clipboard-write = true
 theme = "Solarized Dark Higher Contrast"
 font-family = Fira Code
 font-feature = -calt

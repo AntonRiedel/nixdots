@@ -153,6 +153,8 @@ hl.bind(mod .. " + Period", hl.dsp.focus({ monitor = "r" }))
 hl.bind(mod .. " + SHIFT + Comma", hl.dsp.window.move({ monitor = "l" }))
 hl.bind(mod .. " + SHIFT + Period", hl.dsp.window.move({ monitor = "r" }))
 
+hl.bind(mod .. " + SHIFT + S", hl.dsp.workspace.swap_monitors({ monitor1 = "0", monitor2 = "+1" }))
+
 -- Workspaces
 for i = 1, 9 do
 	hl.bind(mod .. " + " .. i, hl.dsp.focus({ workspace = i }))
