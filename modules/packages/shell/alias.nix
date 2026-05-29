@@ -4,7 +4,7 @@
     { ... }:
     {
       home.shellAliases = {
-        nixroot = "nix develop $HOME/nixdots#root";
+        nixroot = "nix develop $HOME/nixdots#nixrt";
         ls = "ls --color";
         ll = "ls -la";
         rr = "rsync -auhcz --partial --info=progress2";

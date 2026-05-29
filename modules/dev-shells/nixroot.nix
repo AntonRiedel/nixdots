@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.devShells.x86_64-linux.root =
+  flake.devShells.x86_64-linux.nixroot =
     let
       pkgs = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
       python = pkgs.python3.withPackages (
