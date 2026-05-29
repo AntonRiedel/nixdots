@@ -63,7 +63,10 @@ in
     boot.initrd.kernelModules = [
       "amdgpu"
     ];
-    boot.kernelModules = [ "kvm-amd" ];
+    boot.kernelModules = [
+      "kvm-amd"
+      "btusb"
+    ];
 
     hardware.enableRedistributableFirmware = true;
     hardware.cpu.amd.updateMicrocode = true;

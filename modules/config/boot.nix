@@ -7,6 +7,6 @@
       boot.initrd.systemd.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.efi.efiSysMountPoint = "/boot";
-      boot.kernelPackages = pkgs.linuxPackages;
+      boot.kernelPackages = pkgs.linuxPackages_latest;
     };
 }
