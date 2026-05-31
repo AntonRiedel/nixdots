@@ -23,6 +23,7 @@ in
       nixos.nix-settings
       nixos.nixpkgs
       nixos.home-manager-defaults
+      nixos.nh
 
       # user settings
       nixos.user-anton
@@ -32,7 +33,6 @@ in
       nixos.hyprland
       nixos.packages
       nixos.gaming
-      nixos.flatpak
       nixos.dual-function-keys
       nixos.virtualization
       nixos.tailscale
@@ -54,7 +54,7 @@ in
     services.xserver.videoDrivers = [ "amdgpu" ];
 
     nixpkgs.hostPlatform = "x86_64-linux";
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
     home-manager.users.anton = {
       imports = [
         hm.anton
@@ -62,8 +62,10 @@ in
         hm.audio
         hm.ghostty
         hm.bash
+        hm.alias
         hm.tmux
         hm.fzf
+        hm.git
         hm.neovim
         hm.gui-packages
         hm.cli-packages

@@ -37,7 +37,6 @@ in
       # nixos.niri
       nixos.hyprland
       nixos.packages
-      nixos.flatpak
       nixos.dual-function-keys
       nixos.virtualization
       nixos.tailscale
