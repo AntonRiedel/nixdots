@@ -6,13 +6,10 @@
     {
       programs.uwsm = {
         enable = true;
-        package = pkgs.unstable.uwsm;
       };
       programs.hyprland = {
         enable = true;
-        package = pkgs.unstable.hyprland;
         withUWSM = true;
-        portalPackage = pkgs.unstable.xdg-desktop-portal-hyprland;
 
       };
       environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -51,7 +48,7 @@
         kanshi
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
-        pkgs.unstable.noctalia-shell
+        noctalia-shell
       ];
     };
 
@@ -60,7 +57,6 @@
     {
       wayland.windowManager.hyprland = {
         enable = true;
-        package = pkgs.unstable.hyprland;
       };
       home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
       xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;

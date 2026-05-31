@@ -25,7 +25,7 @@
       home = {
         username = "anton";
         homeDirectory = "/home/anton";
-        stateVersion = "25.11";
+        stateVersion = "26.05";
       };
       fonts.fontconfig.enable = true;
       programs.home-manager.enable = true;

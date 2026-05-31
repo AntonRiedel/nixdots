@@ -1,4 +1,3 @@
-# home-modules/neovim/neovim.nix
 { ... }:
 {
   flake.modules.homeManager.neovim =
@@ -9,8 +8,7 @@
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
-        package = pkgs.unstable.neovim-unwrapped;
-        plugins = with pkgs.unstable.vimPlugins; [
+        plugins = with pkgs.vimPlugins; [
           (nvim-treesitter.withPlugins (
             p: with p; [
               bash
@@ -37,7 +35,7 @@
 
       };
 
-      home.packages = with pkgs.unstable; [
+      home.packages = with pkgs; [
         tree-sitter
         lua51Packages.lua
         lua51Packages.luarocks

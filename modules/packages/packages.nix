@@ -10,8 +10,8 @@
       lm_sensors
       brightnessctl
       pciutils
+      android-tools
     ];
-    programs.adb.enable    = true;
     programs.dconf.enable  = true;
     programs.direnv.enable = true;
   };
