@@ -10,6 +10,7 @@
         eduvpn-client
         remmina
 	zoom-us
+	rnote
       ];
     };
 }

@@ -63,7 +63,7 @@ in
     hardware.cpu.amd.updateMicrocode = true;
 
     nixpkgs.hostPlatform = "x86_64-linux";
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
     home-manager.users.anton = {
       imports = [
         hm.anton
@@ -71,10 +71,12 @@ in
         hm.audio
         hm.ghostty
         hm.bash
+        hm.alias
         hm.tmux
         hm.fzf
         hm.git
         hm.neovim
+        hm.cernbox
         hm.gui-packages
         hm.cli-packages
         hm.dev-packages
