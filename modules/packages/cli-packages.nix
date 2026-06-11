@@ -5,6 +5,7 @@
     {
       home.packages = with pkgs; [
         nh
+	devenv
         htop
         fd
         ripgrep
