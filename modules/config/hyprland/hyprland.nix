@@ -55,9 +55,9 @@
   flake.modules.homeManager.hyprland =
     { pkgs, ... }:
     {
-      wayland.windowManager.hyprland = {
-        enable = true;
-      };
+      # wayland.windowManager.hyprland = {
+      #   enable = true;
+      # };
       home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
       xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
     };

@@ -7,7 +7,7 @@
         # formatters & linters
         stylua
         shfmt
-        nixfmt-rfc-style
+        nixfmt
         black
         clang-tools
         cpplint

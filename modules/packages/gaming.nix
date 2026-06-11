@@ -18,7 +18,7 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-        melonDS
+        melonds
         mgba
       ];
     };
