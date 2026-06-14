@@ -13,6 +13,7 @@ in
       hm.tmux
       hm.fzf
       hm.git
+      inputs.nvf.homeManagerModules.default
       hm.neovim
       hm.cli-packages
       {

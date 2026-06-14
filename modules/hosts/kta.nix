@@ -12,6 +12,7 @@ in
       hm.alias
       hm.tmux
       hm.fzf
+      inputs.nvf.homeManagerModules.default
       hm.neovim
       hm.cli-packages
       {
