@@ -4,21 +4,19 @@ let
   hm = config.flake.modules.homeManager;
 in
 {
-  configurations.nixos.diamond.module = {
+  configurations.nixos.gold.module = {
     imports = [
 
       inputs.home-manager.nixosModules.home-manager
 
       # hardware settings
-      inputs.nixos-hardware.nixosModules.common-cpu-amd
-      inputs.nixos-hardware.nixosModules.common-gpu-amd-sea-islands
+      inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x220
       nixos.boot
-      nixos.diamond-filesystem
+      nixos.gold
       nixos.networkmanager
       nixos.audio
       nixos.bluetooth
       nixos.locale
-      nixos.ssh
 
       # nix settings
       nixos.nix-settings
@@ -41,25 +39,28 @@ in
     ];
 
     # host settings h
-    networking.hostName = "diamond";
+    networking.hostName = "gold";
     boot.initrd.availableKernelModules = [
-      "xhci_pci"
+      "ehci_pci"
       "ahci"
-      "usbhid"
       "usb_storage"
       "sd_mod"
+      "sdhci_pci"
     ];
-    boot.kernelModules = [ "kvm-amd" ];
     hardware.enableRedistributableFirmware = true;
-    hardware.cpu.amd.updateMicrocode = true;
-    services.xserver.videoDrivers = [ "amdgpu" ];
+    hardware.cpu.intel.updateMicrocode = true;
+    boot.kernelModules = [
+      "i915"
+      "kvm-intel"
+    ];
+    services.xserver.videoDrivers = [ "intel" ];
 
     nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.05";
     home-manager.users.anton = {
       imports = [
         hm.anton
-	hm.hyprland
+        hm.hyprland
         hm.audio
         hm.ghostty
         hm.bash
@@ -71,7 +72,6 @@ in
         hm.gui-packages
         hm.cli-packages
         hm.dev-packages
-        hm.gaming
       ];
     };
   };
