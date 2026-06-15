@@ -1,10 +1,9 @@
-{ inputs, ... }:
-{
-  flake.devShells.x86_64-linux.nixroot =
-    let
-      pkgs = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
-      python = pkgs.python3.withPackages (
-        ps: with ps; [
+{inputs, ...}: {
+  flake.devShells.x86_64-linux.nixroot = let
+    pkgs = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
+    python = pkgs.python3.withPackages (
+      ps:
+        with ps; [
           numpy
           scipy
           matplotlib
@@ -14,9 +13,9 @@
           uproot
           jupyterlab
         ]
-      );
-      tex = pkgs.texlive.combined.scheme-medium;
-    in
+    );
+    tex = pkgs.texlive.combined.scheme-full;
+  in
     pkgs.mkShell {
       packages = [
         pkgs.root
