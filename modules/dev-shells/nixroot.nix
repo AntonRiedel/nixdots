@@ -28,6 +28,7 @@
         pkgs.shfmt
         python
         tex
+        pkgs.git-latexdiff
       ];
       shellHook = ''
         export PYTHONPATH="${pkgs.root}/lib:$PYTHONPATH"
