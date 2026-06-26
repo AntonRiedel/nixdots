@@ -1,21 +1,17 @@
-{ ... }:
-{
-  flake.modules.nixos.audio =
-    { ... }:
-    {
-      security.rtkit.enable = true;
-      services.pipewire = {
-        enable = true;
-        pulse.enable = true;
-      };
+{...}: {
+  flake.modules.nixos.audio = {...}: {
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa.support32Bit = false;
     };
+  };
 
-  flake.modules.homeManager.audio =
-    { pkgs, ... }:
-    {
-      home.packages = with pkgs; [
-        pavucontrol
-        pulsemixer
-      ];
-    };
+  flake.modules.homeManager.audio = {pkgs, ...}: {
+    home.packages = with pkgs; [
+      pavucontrol
+      pulsemixer
+    ];
+  };
 }
