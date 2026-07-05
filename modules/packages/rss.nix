@@ -37,11 +37,6 @@
           title = "~NEWSFEED: FSF News";
         }
         {
-          url = "https://suckless.org/atom.xml";
-          tags = ["NEWSFEED"];
-          title = "~NEWSFEED: suckless.org";
-        }
-        {
           url = "https://www.phoronix.com/rss.php";
           tags = ["NEWSFEED"];
           title = "~NEWSFEED: Phoronix";
@@ -108,18 +103,8 @@
           tags = ["LBRY"];
           title = "~LBRY: Brodie Robertson";
         }
-        {
-          url = "https://odysee.com/\$/rss/@AlphaNerd:8";
-          tags = ["LBRY"];
-          title = "~LBRY: Mental Outlaw";
-        }
 
         # YOUTUBE
-        {
-          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA";
-          tags = ["YOUTUBE"];
-          title = "~YOUTUBE: TJ DeVries";
-        }
         {
           url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCxQKHvKbmSzGMvUrVtJYnUA";
           tags = ["YOUTUBE"];
@@ -148,17 +133,7 @@
         {
           url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCwWhs_6x42TyRM4Wstoq8HA";
           tags = ["YOUTUBE"];
-          title = "~YOUTUBE: The Daily Show with Trevor Noah";
-        }
-        {
-          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMtFAi84ehTSYSE9XoHefig";
-          tags = ["YOUTUBE"];
-          title = "~YOUTUBE: The Late Show with Stephen Colbert";
-        }
-        {
-          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCVTyTA7-g9nopHeHbeuvpRA";
-          tags = ["YOUTUBE"];
-          title = "~YOUTUBE: Late Night with Seth Meyers";
+          title = "~YOUTUBE: The Daily Show";
         }
         {
           url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g";
@@ -174,11 +149,6 @@
           url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA";
           tags = ["YOUTUBE"];
           title = "~YOUTUBE: Veritasium";
-        }
-        {
-          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA";
-          tags = ["YOUTUBE"];
-          title = "~YOUTUBE: Vsauce";
         }
         {
           url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCY6Ij8zOds0WJEeqCLOnqOQ";
@@ -248,29 +218,9 @@
           title = "~REDDIT: zfs";
         }
         {
-          url = "https://www.reddit.com/r/vim/.rss";
-          tags = ["REDDIT"];
-          title = "~REDDIT: Vim";
-        }
-        {
           url = "https://www.reddit.com/r/neovim/.rss";
           tags = ["REDDIT"];
           title = "~REDDIT: Neovim";
-        }
-        {
-          url = "https://www.reddit.com/r/vimporn/.rss";
-          tags = ["REDDIT"];
-          title = "~REDDIT: Vimporn";
-        }
-        {
-          url = "https://www.reddit.com/r/vimplugins/.rss";
-          tags = ["REDDIT"];
-          title = "~REDDIT: Vim Plugins";
-        }
-        {
-          url = "https://www.reddit.com/r/vim_magic/.rss";
-          tags = ["REDDIT"];
-          title = "~REDDIT: Vim Magic";
         }
         {
           url = "https://www.reddit.com/r/homelab/.rss";
@@ -290,33 +240,6 @@
           url = "https://www.archlinux.org/feeds/news";
           tags = ["DISTRO"];
           title = "~ARCH: Arch News";
-        }
-        {
-          url = "https://www.archlinux.org/feeds/packages/x86_64/";
-          tags = ["DISTRO"];
-          title = "~ARCH: Packages x86_64";
-        }
-        {
-          url = "https://aur.archlinux.org/rss/";
-          tags = ["DISTRO"];
-          title = "~ARCH: AUR";
-        }
-
-        # GIT_REPOS
-        {
-          url = "https://github.com/neovim/neovim/tags.atom";
-          tags = ["GIT"];
-          title = "~GITHUB: Neovim";
-        }
-        {
-          url = "https://github.com/vim/vim/commits/master.atom";
-          tags = ["GIT"];
-          title = "~GITHUB: Vim";
-        }
-        {
-          url = "https://github.com/root-project/root/releases.atom";
-          tags = ["GIT"];
-          title = "~GITHUB: ROOT";
         }
 
         # ARXIV / PHYSICS
