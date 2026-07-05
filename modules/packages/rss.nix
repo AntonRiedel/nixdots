@@ -321,17 +321,17 @@
 
         # ARXIV / PHYSICS
         {
-          url = "http://export.arxiv.org/rss/hep-ex";
+          url = "https://rss.arxiv.org/rss/hep-ex";
           tags = ["PHYSICS"];
           title = "~ARXIV: hep-ex";
         }
         {
-          url = "http://export.arxiv.org/rss/nucl-ex";
+          url = "https://rss.arxiv.org/rss/nucl-ex";
           tags = ["PHYSICS"];
           title = "~ARXIV: nucl-ex";
         }
         {
-          url = "https://home.cern/news/feed.xml";
+          url = "https://home.cern/api/news/feed.rss";
           tags = ["PHYSICS"];
           title = "~CERN: News";
         }
@@ -339,6 +339,7 @@
 
       extraConfig = ''
         max-items 1000
+        user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
 
         macro w set browser "mpv %u"; open-in-browser; set browser "${newsboat-browser}/bin/newsboat-browser"
         macro b set browser "brave %u"; open-in-browser; set browser "${newsboat-browser}/bin/newsboat-browser"
