@@ -244,12 +244,12 @@
 
         # ARXIV / PHYSICS
         {
-          url = "https://rss.arxiv.org/rss/hep-ex";
+          url = "https://rss.arxiv.org/atom/hep-ex";
           tags = ["PHYSICS"];
           title = "~ARXIV: hep-ex";
         }
         {
-          url = "https://rss.arxiv.org/rss/nucl-ex";
+          url = "https://rss.arxiv.org/atom/nucl-ex";
           tags = ["PHYSICS"];
           title = "~ARXIV: nucl-ex";
         }
