@@ -1,12 +1,13 @@
-{ config, inputs, ... }:
-let
+{
+  config,
+  inputs,
+  ...
+}: let
   nixos = config.flake.modules.nixos;
   hm = config.flake.modules.homeManager;
-in
-{
+in {
   configurations.nixos.diamond.module = {
     imports = [
-
       inputs.home-manager.nixosModules.home-manager
 
       # hardware settings
@@ -49,17 +50,17 @@ in
       "usb_storage"
       "sd_mod"
     ];
-    boot.kernelModules = [ "kvm-amd" ];
+    boot.kernelModules = ["kvm-amd"];
     hardware.enableRedistributableFirmware = true;
     hardware.cpu.amd.updateMicrocode = true;
-    services.xserver.videoDrivers = [ "amdgpu" ];
+    services.xserver.videoDrivers = ["amdgpu"];
 
     nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.05";
     home-manager.users.anton = {
       imports = [
         hm.anton
-	hm.hyprland
+        hm.hyprland
         hm.audio
         hm.ghostty
         hm.bash
@@ -72,6 +73,7 @@ in
         hm.cli-packages
         hm.dev-packages
         hm.gaming
+        hm.rss
       ];
     };
   };
