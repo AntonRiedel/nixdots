@@ -1,4 +1,3 @@
-# home-modules/packages/gui-packages.nix
 { ... }:
 {
   flake.modules.homeManager.gui-packages =

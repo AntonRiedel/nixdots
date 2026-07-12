@@ -1,6 +1,5 @@
-{inputs, ...}: {
+{pkgs, ...}: {
   flake.devShells.x86_64-linux.nixroot = let
-    pkgs = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
     python = pkgs.python3.withPackages (
       ps:
         with ps; [
@@ -14,7 +13,7 @@
           jupyterlab
         ]
     );
-    tex = pkgs.texlive.combined.scheme-full;
+    tex = pkgs.texliveSmall;
   in
     pkgs.mkShell {
       packages = [

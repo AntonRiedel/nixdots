@@ -1,6 +1,6 @@
 # Base system packages and common programs for all machines.
-{ ... }: {
-  flake.modules.nixos.packages = { pkgs, ... }: {
+{...}: {
+  flake.modules.nixos.packages = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       neovim
       git
@@ -12,7 +12,8 @@
       pciutils
       android-tools
     ];
-    programs.dconf.enable  = true;
+    programs.dconf.enable = true;
     programs.direnv.enable = true;
+    programs.kdeconnect.enable = true;
   };
 }
