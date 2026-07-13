@@ -1,5 +1,6 @@
-{...}: {
-  perSystem = {pkgs, ...}: let
+{inputs, ...}: {
+  flake.devShells.x86_64-linux.nixroot = let
+    pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
     python = pkgs.python3.withPackages (ps:
       with ps; [
         numpy
@@ -11,10 +12,9 @@
         uproot
         jupyterlab
       ]);
-
     tex = pkgs.texliveSmall;
-  in {
-    devShells.nixroot = pkgs.mkShell {
+  in
+    pkgs.mkShell {
       packages = [
         pkgs.root
         pkgs.jq
@@ -28,11 +28,9 @@
         tex
         pkgs.git-latexdiff
       ];
-
       shellHook = ''
         export PYTHONPATH="${pkgs.root}/lib:$PYTHONPATH"
         echo "ROOT $(root-config --version) environment ready"
       '';
     };
-  };
 }
