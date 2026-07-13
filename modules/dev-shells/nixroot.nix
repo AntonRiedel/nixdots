@@ -1,21 +1,20 @@
-{pkgs, ...}: {
-  flake.devShells.x86_64-linux.nixroot = let
-    python = pkgs.python3.withPackages (
-      ps:
-        with ps; [
-          numpy
-          scipy
-          matplotlib
-          sympy
-          awkward
-          pandas
-          uproot
-          jupyterlab
-        ]
-    );
+{...}: {
+  perSystem = {pkgs, ...}: let
+    python = pkgs.python3.withPackages (ps:
+      with ps; [
+        numpy
+        scipy
+        matplotlib
+        sympy
+        awkward
+        pandas
+        uproot
+        jupyterlab
+      ]);
+
     tex = pkgs.texliveSmall;
-  in
-    pkgs.mkShell {
+  in {
+    devShells.nixroot = pkgs.mkShell {
       packages = [
         pkgs.root
         pkgs.jq
@@ -29,9 +28,11 @@
         tex
         pkgs.git-latexdiff
       ];
+
       shellHook = ''
         export PYTHONPATH="${pkgs.root}/lib:$PYTHONPATH"
         echo "ROOT $(root-config --version) environment ready"
       '';
     };
+  };
 }
