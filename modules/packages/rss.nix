@@ -1,12 +1,13 @@
+
 {...}: {
   flake.modules.homeManager.rss = {pkgs, ...}: let
     newsboat-browser = pkgs.writeShellScriptBin "newsboat-browser" ''
       #!/usr/bin/env bash
-      # newsboat-browser: route video links to mpv, everything else to brave
+      # newsboat-browser: route video links to mpv, everything else to firefox
       url="$1"
 
       case "$url" in
-        *youtube.com/watch*|*youtube.com/shorts*|*youtu.be/*|*.mp4|*.webm|*.mkv)
+        *odysee.com/*|*youtube.com/watch*|*youtube.com/shorts*|*youtu.be/*|*.mp4|*.webm|*.mkv)
           setsid -f ${pkgs.mpv}/bin/mpv --quiet -- "$url" >/dev/null 2>&1 &
           ;;
         *)
@@ -96,6 +97,22 @@
           tags = ["NEWSFEED"];
           title = "~NEWSFEED: Hacker News";
         }
+        {
+          url = "https://feeds.arstechnica.com/arstechnica/index";
+          tags = ["NEWSFEED"];
+          title = "~NEWSFEED: Ars Technica";
+        }
+        {
+          url = "https://www.omgubuntu.co.uk/feed";
+          tags = ["NEWSFEED"];
+          title = "~NEWSFEED: OMG Ubuntu";
+        }
+        {
+          # unverified - standard WordPress /feed path, test before relying on it
+          url = "https://cerncourier.com/feed/";
+          tags = ["NEWSFEED"];
+          title = "~NEWSFEED: CERN Courier";
+        }
 
         # LBRY
         {
@@ -175,6 +192,76 @@
           tags = ["YOUTUBE"];
           title = "~YOUTUBE: Nerd Attack";
         }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCFLFc8Lpbwt4jPtY1_Ai5yA";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: WAN Show";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCdBK94H6oZT2Q7l0-b0xmMg";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Short Circuit";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2wdo5vU7bPBNzyC2nnwmNQ";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Cutting Edge Engineering Australia";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Jeff Geerling";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC-rsk3yPz02MfRk6vkMAw2w";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: HAL Heavy Duty Machining Australia";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC_zBdZ0_H_jn41FDRG7q4Tw";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Vimjoyer";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCv6J_jJa8GJqFwQNgNrMuww";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: ServeTheHome";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCp3yVOm6A55nx65STpm3tXQ";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Craft Computing";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Wolfgang's Channel";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: The Linux Experiment";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCg6gPGh8HU2U01vaFCAsvmQ";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Chris Titus Tech";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC1yNl2E66ZzKApQdRuTQ4tw";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Sabine Hossenfelder";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCD5B6VoXv41fJ-IW8Wrhz9A";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: Fermilab";
+        }
+        {
+          url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCrHXK2A9JtiexqwHuWGeSMg";
+          tags = ["YOUTUBE"];
+          title = "~YOUTUBE: CERN";
+        }
 
         # REDDIT (fixed: trailing slash before .rss)
         {
@@ -226,6 +313,31 @@
           url = "https://www.reddit.com/r/homelab/.rss";
           tags = ["REDDIT"];
           title = "~REDDIT: homelab";
+        }
+        {
+          url = "https://www.reddit.com/r/selfhosted/.rss";
+          tags = ["REDDIT"];
+          title = "~REDDIT: selfhosted";
+        }
+        {
+          url = "https://www.reddit.com/r/DataHoarder/.rss";
+          tags = ["REDDIT"];
+          title = "~REDDIT: DataHoarder";
+        }
+        {
+          url = "https://www.reddit.com/r/Proxmox/.rss";
+          tags = ["REDDIT"];
+          title = "~REDDIT: Proxmox";
+        }
+        {
+          url = "https://www.reddit.com/r/framework/.rss";
+          tags = ["REDDIT"];
+          title = "~REDDIT: framework";
+        }
+        {
+          url = "https://www.reddit.com/r/Physics/.rss";
+          tags = ["REDDIT"];
+          title = "~REDDIT: Physics";
         }
 
         # NIXOS

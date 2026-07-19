@@ -14,6 +14,6 @@
     ];
     programs.dconf.enable = true;
     programs.direnv.enable = true;
-    programs.kdeconnect.enable = true;
+    # programs.kdeconnect.enable = true;
   };
 }
