@@ -10,6 +10,7 @@
         awkward
         pandas
         uproot
+        plotly
         jupyterlab
       ]);
     tex = pkgs.texliveSmall;
