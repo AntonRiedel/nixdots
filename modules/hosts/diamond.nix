@@ -68,6 +68,7 @@ in {
         hm.tmux
         hm.fzf
         hm.git
+        hm.ai
         hm.neovim
         hm.gui-packages
         hm.cli-packages

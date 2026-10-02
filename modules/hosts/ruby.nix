@@ -85,6 +85,7 @@ in
         hm.git
         hm.neovim
         hm.cernbox
+        hm.ai
         hm.gui-packages
         hm.cli-packages
         hm.dev-packages

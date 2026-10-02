@@ -1,11 +1,13 @@
-{ inputs, config, ... }:
-let
-  hm = config.flake.modules.homeManager;
-in
 {
+  inputs,
+  config,
+  ...
+}: let
+  hm = config.flake.modules.homeManager;
+in {
   configurations.homeManager."ga45can@kta" = inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = config.pkgs;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     modules = [
       hm.ga45can
       hm.bash
@@ -14,6 +16,7 @@ in
       hm.fzf
       inputs.nvf.homeManagerModules.default
       hm.neovim
+      hm.ai
       hm.cli-packages
       {
         nix.package = config.pkgs.nix;
