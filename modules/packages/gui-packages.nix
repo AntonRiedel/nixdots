@@ -1,36 +1,34 @@
-{ ... }:
-{
-  flake.modules.homeManager.gui-packages =
-    { pkgs, ... }:
-    {
-      home.packages = with pkgs; [
-        # browsers
-        firefox
-        brave
-        qutebrowser
+{...}: {
+  flake.modules.homeManager.gui-packages = {pkgs, ...}: {
+    home.packages = with pkgs; [
+      # browsers
+      firefox
+      brave
+      qutebrowser
 
-        # documents & office
-        kdePackages.okular
-        zathura
-        libreoffice
-        imagemagick
+      # documents & office
+      kdePackages.okular
+      zathura
+      libreoffice
+      imagemagick
 
-        # productivity
-        rofi
-        newsboat
-	openpomodoro-cli
+      # productivity
+      rofi
+      newsboat
+      openpomodoro-cli
+      liferea
 
-        # file management
-        pcmanfm
-        imv
+      # file management
+      pcmanfm
+      imv
 
-        # remote & connectivity
-        tigervnc
-        nextcloud-client
+      # remote & connectivity
+      tigervnc
+      nextcloud-client
 
-        # misc
-        scrcpy
-        keepassxc
-      ];
-    };
+      # misc
+      scrcpy
+      keepassxc
+    ];
+  };
 }

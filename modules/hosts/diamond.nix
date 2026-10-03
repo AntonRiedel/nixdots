@@ -74,7 +74,6 @@ in {
         hm.cli-packages
         hm.dev-packages
         hm.gaming
-        hm.rss
       ];
     };
   };
