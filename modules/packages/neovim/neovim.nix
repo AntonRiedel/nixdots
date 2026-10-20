@@ -26,17 +26,14 @@
         vim.git.gitsigns.enable = true;
         vim.git.neogit.enable = true;
 
-        # ── Filetree ─────────────────────────────────────────────────────
-        vim.filetree.neo-tree.enable = true;
-        vim.luaConfigRC.neo-tree-toggle = ''
-          vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>')
-        '';
-
         # ── Keybind helper / editing utilities ──────────────────────────
         vim.binds.whichKey.enable = true;
         vim.utility.surround.enable = true;
         vim.utility.direnv.enable = true;
-        vim.utility.yazi-nvim.enable = true;
+        vim.utility.yazi-nvim = {
+          enable = true;
+          mappings.openYazi = "<leader>e";
+        };
         vim.ui.illuminate.enable = true;
 
         vim.autocomplete.blink-cmp = {
