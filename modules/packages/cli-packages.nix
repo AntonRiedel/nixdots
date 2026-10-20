@@ -13,6 +13,8 @@
         yazi
         zip
         unzip
+        bat
+        eza
       ];
     };
 }

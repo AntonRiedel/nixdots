@@ -24,6 +24,7 @@
 
         # ── Git ──────────────────────────────────────────────────────────
         vim.git.gitsigns.enable = true;
+        vim.git.neogit.enable = true;
 
         # ── Filetree ─────────────────────────────────────────────────────
         vim.filetree.neo-tree.enable = true;
@@ -35,6 +36,7 @@
         vim.binds.whichKey.enable = true;
         vim.utility.surround.enable = true;
         vim.utility.direnv.enable = true;
+        vim.utility.yazi-nvim.enable = true;
         vim.ui.illuminate.enable = true;
 
         vim.autocomplete.blink-cmp = {

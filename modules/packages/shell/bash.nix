@@ -52,6 +52,8 @@
       };
 
       home.sessionVariables = {
+        EDITOR = "nvim";
+        VISUAL = "nvim";
         GIT_ASKPASS = "";
         GRAVEYARD = "$HOME/.local/share/Trash";
         ALICE = "$HOME/alice";
