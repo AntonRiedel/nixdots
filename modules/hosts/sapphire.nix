@@ -22,6 +22,7 @@ in
       nixos.nix-settings
       nixos.nixpkgs
       nixos.home-manager-defaults
+      nixos.nh
 
       # user settings
       nixos.user-anton
@@ -60,7 +61,7 @@ in
     ];
 
     hardware.enableRedistributableFirmware = true;
-    hardware.cpu.amd.updateMicrocode = true;
+    hardware.cpu.intel.updateMicrocode = true;
 
     nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.05";

@@ -22,6 +22,21 @@
 
         vim.telescope.enable = true;
 
+        # ── Git ──────────────────────────────────────────────────────────
+        vim.git.gitsigns.enable = true;
+
+        # ── Filetree ─────────────────────────────────────────────────────
+        vim.filetree.neo-tree.enable = true;
+        vim.luaConfigRC.neo-tree-toggle = ''
+          vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>')
+        '';
+
+        # ── Keybind helper / editing utilities ──────────────────────────
+        vim.binds.whichKey.enable = true;
+        vim.utility.surround.enable = true;
+        vim.utility.direnv.enable = true;
+        vim.ui.illuminate.enable = true;
+
         vim.autocomplete.blink-cmp = {
           enable = true;
           friendly-snippets.enable = true;
@@ -208,6 +223,29 @@
             },
           })
           vim.lsp.enable('ansiblels')
+        '';
+
+        # ── Python :make ─────────────────────────────────────────────────
+        vim.luaConfigRC.python-makeprg = ''
+          vim.api.nvim_create_autocmd("FileType", {
+            pattern = "python",
+            callback = function()
+              vim.opt_local.makeprg = "python3 %"
+            end,
+          })
+        '';
+
+        # ── ROOT macro :make ─────────────────────────────────────────────
+        # .C is detected as filetype "cpp", not its own filetype, so match
+        # on the filename itself rather than FileType to avoid touching
+        # regular .cpp/.cxx files.
+        vim.luaConfigRC.root-makeprg = ''
+          vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+            pattern = "*.C",
+            callback = function()
+              vim.opt_local.makeprg = "root -l -b -q %"
+            end,
+          })
         '';
 
         # ── :Format command ───────────────────────────────────────────────

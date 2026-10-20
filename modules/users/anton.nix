@@ -7,7 +7,7 @@
     {
       users.users.anton = {
         isNormalUser = true;
-        initialPassword = "slap"; 
+        initialPassword = "slap";
         description = "anton";
         extraGroups = [
           "wheel"
