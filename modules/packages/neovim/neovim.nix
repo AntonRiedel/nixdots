@@ -53,6 +53,10 @@
 
         vim.utility.smart-splits.enable = true;
         vim.luaConfigRC.smart-splits = ''
+          -- autodetection checks $TERM_PROGRAM == "tmux", which tmux never
+          -- sets (Ghostty leaves it as "ghostty"), so force it instead.
+          vim.g.smart_splits_multiplexer_integration = 'tmux'
+
           local ss = require('smart-splits')
           vim.keymap.set('n', '<M-h>', ss.move_cursor_left)
           vim.keymap.set('n', '<M-j>', ss.move_cursor_down)
