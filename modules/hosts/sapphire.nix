@@ -1,12 +1,13 @@
-{ config, inputs, ... }:
-let
+{
+  config,
+  inputs,
+  ...
+}: let
   nixos = config.flake.modules.nixos;
   hm = config.flake.modules.homeManager;
-in
-{
+in {
   configurations.nixos.sapphire.module = {
     imports = [
-
       inputs.home-manager.nixosModules.home-manager
 
       # hardware settings
@@ -78,6 +79,7 @@ in
         hm.git
         hm.neovim
         hm.cernbox
+        hm.ai
         hm.gui-packages
         hm.cli-packages
         hm.dev-packages
