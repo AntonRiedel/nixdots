@@ -6,6 +6,7 @@
       system = "x86_64-linux";
       config.allowUnfree = true;
       overlays = [
+        inputs.nur.overlays.default
         (_final: _prev: {
           unstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
         })
@@ -19,6 +20,7 @@
       nixpkgs = {
         config.allowUnfree = true;
         overlays = [
+          inputs.nur.overlays.default
           (_final: _prev: {
             unstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
           })

@@ -10,6 +10,10 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     import-tree.url = "github:vic/import-tree";
     nvf = {
       url = "github:notashelf/nvf";

@@ -87,6 +87,7 @@ in
         hm.cernbox
         hm.ai
         hm.gui-packages
+        hm.firefox
         hm.cli-packages
         hm.dev-packages
         hm.work-packages

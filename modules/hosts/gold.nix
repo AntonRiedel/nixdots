@@ -70,6 +70,7 @@ in
         hm.git
         hm.neovim
         hm.gui-packages
+        hm.firefox
         hm.cli-packages
         hm.dev-packages
       ];

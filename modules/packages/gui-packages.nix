@@ -1,11 +1,6 @@
 {...}: {
   flake.modules.homeManager.gui-packages = {pkgs, ...}: {
     home.packages = with pkgs; [
-      # browsers
-      firefox
-      brave
-      qutebrowser
-
       # documents & office
       kdePackages.okular
       zathura
@@ -14,7 +9,6 @@
 
       # productivity
       rofi
-      newsboat
       openpomodoro-cli
       liferea
 
@@ -23,8 +17,8 @@
       imv
 
       # remote & connectivity
-      tigervnc
       nextcloud-client
+      remmina
 
       # misc
       scrcpy

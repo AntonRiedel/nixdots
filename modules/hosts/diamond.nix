@@ -71,6 +71,7 @@ in {
         hm.ai
         hm.neovim
         hm.gui-packages
+        hm.firefox
         hm.cli-packages
         hm.dev-packages
         hm.gaming

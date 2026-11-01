@@ -6,7 +6,6 @@
       mattermost-desktop
       eduvpn-client
       wireguard-tools
-      remmina
       zoom-us
       rnote
     ];
