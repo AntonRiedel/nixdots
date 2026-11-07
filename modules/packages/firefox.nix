@@ -1,8 +1,23 @@
 # modules/packages/firefox.nix
 {...}: {
-  flake.modules.homeManager.firefox = {pkgs, ...}: let
+  flake.modules.homeManager.firefox = {pkgs, osConfig, ...}: let
     firefoxAddons = pkgs.nur.repos.rycee.firefox-addons;
+
+    # work profile is default on work hosts, personal profile everywhere else
+    workHosts = ["ruby" "sapphire"];
+    isWorkDefault = builtins.elem osConfig.networking.hostName workHosts;
   in {
+    # quick profile launchers, so switching profiles is "firefox-work" /
+    # "firefox-personal" in rofi instead of going through about:profiles
+    home.packages = [
+      (pkgs.writeShellScriptBin "firefox-work" ''
+        exec firefox -P work "$@"
+      '')
+      (pkgs.writeShellScriptBin "firefox-personal" ''
+        exec firefox -P personal "$@"
+      '')
+    ];
+
     programs.firefox = {
       enable = true;
 
@@ -14,7 +29,7 @@
       profiles = {
         work = {
           id = 0;
-          isDefault = true;
+          isDefault = isWorkDefault;
 
           settings = {
             # no Firefox Account / Sync on either profile
@@ -27,6 +42,75 @@
 
             # don't require manually re-enabling declarative extensions
             "extensions.autoDisableScopes" = 0;
+
+            # Tracking protection
+            "privacy.trackingprotection.enabled" = true;
+            "privacy.trackingprotection.pbmode.enabled" = true;
+            "privacy.trackingprotection.socialtracking.enabled" = true;
+
+            # Fingerprinting protection
+            "privacy.fingerprintingProtection" = true;
+
+            # Disable telemetry
+            "datareporting.healthreport.uploadEnabled" = false;
+            "datareporting.policy.dataSubmissionEnabled" = false;
+            "toolkit.telemetry.enabled" = false;
+            "toolkit.telemetry.unified" = false;
+            "toolkit.telemetry.archive.enabled" = false;
+
+            # Disable studies and experiments
+            "app.shield.optoutstudies.enabled" = false;
+            "app.normandy.enabled" = false;
+
+            # Disable sponsored suggestions
+            "browser.urlbar.suggest.quicksuggest.sponsored" = false;
+            "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
+
+            # Restore previous session
+            "browser.startup.page" = 3;
+
+            # Don't close Firefox when closing the last tab
+            "browser.tabs.closeWindowWithLastTab" = false;
+
+            # Open new tabs next to the current tab
+            "browser.tabs.insertAfterCurrent" = true;
+
+            # Don't switch to a tab immediately when opening it
+            "browser.tabs.loadInBackground" = true;
+
+            # Disable annoying autoplay
+            "media.autoplay.default" = 5;
+            "media.autoplay.blocking_policy" = 2;
+
+            # Disable Pocket integration
+            "extensions.pocket.enabled" = false;
+
+            # Empty new tabs
+            "browser.newtabpage.enabled" = false;
+
+            # Don't show recommendations in the address bar
+            "browser.urlbar.suggest.topsites" = false;
+
+            # Enable smooth scrolling
+            "general.smoothScroll" = true;
+
+            # Enable compact density (if available in your Firefox version)
+            "browser.uidensity" = 1;
+
+            # Use system theme
+            "extensions.activeThemeID" = "default-theme@mozilla.org";
+          };
+
+          search = {
+            force = true;
+            default = "ddg";
+            privateDefault = "ddg";
+
+            order = [
+              "ddg"
+              "google"
+              "wikipedia"
+            ];
           };
 
           extensions.packages = with firefoxAddons; [
@@ -35,6 +119,9 @@
             darkreader
             privacy-badger
             grammarly
+            user-agent-string-switcher
+            clearurls
+            decentraleyes
           ];
 
           bookmarks = {
@@ -604,12 +691,15 @@
 
         personal = {
           id = 1;
-          isDefault = false;
+          isDefault = !isWorkDefault;
 
           settings = {
             # no Firefox Account / Sync on either profile
             "identity.fxaccounts.enabled" = false;
             "browser.toolbars.bookmarks.visibility" = "always";
+
+            # disable browsing history
+            "places.history.enabled" = false;
 
             # don't require manually re-enabling declarative extensions
             "extensions.autoDisableScopes" = 0;
@@ -620,6 +710,9 @@
             keepassxc-browser
             darkreader
             privacy-badger
+            user-agent-string-switcher
+            clearurls
+            decentraleyes
           ];
 
           bookmarks = {
