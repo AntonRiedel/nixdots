@@ -19,7 +19,7 @@
         useUserPackages = true;
         backupFileExtension = "bak";
         extraSpecialArgs = { inherit inputs; };
-        sharedModules = [ inputs.nvf.homeManagerModules.default ];
+        sharedModules = [ inputs.nvf.homeModules.default ];
       };
     };
 }
