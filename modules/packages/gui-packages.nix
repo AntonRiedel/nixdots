@@ -1,28 +1,24 @@
 {...}: {
-  flake.modules.homeManager.gui-packages = {pkgs, ...}: {
-    home.packages = with pkgs; [
-      # documents & office
+  flake.modules.nixos.gui-packages = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      keepassxc
       kdePackages.okular
       zathura
       libreoffice
       imagemagick
+      pcmanfm
+      imv
+      nextcloud-client
+      remmina
+    ];
+  };
 
-      # productivity
+  flake.modules.homeManager.gui-packages = {pkgs, ...}: {
+    home.packages = with pkgs; [
       rofi
       openpomodoro-cli
       liferea
-
-      # file management
-      pcmanfm
-      imv
-
-      # remote & connectivity
-      nextcloud-client
-      remmina
-
-      # misc
       scrcpy
-      keepassxc
     ];
   };
 }

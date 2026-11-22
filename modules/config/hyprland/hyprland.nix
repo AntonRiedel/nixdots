@@ -39,6 +39,7 @@
       cliphist
       nwg-clipman
       kanshi
+      hyprpolkitagent
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
       noctalia-shell

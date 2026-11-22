@@ -17,7 +17,7 @@ package.path = package.path .. ";./plugins/?.lua;./plugins/?/init.lua"
 local smw = require("plugins.split-monitor-workspaces")
 smw.setup({
         workspace_count = 9,
-            monitor_priority = { "DP-5", "DP-4" },
+        monitor_priority = { "DP-5", "DP-4" },
 })
 
 ---------------------
@@ -48,6 +48,7 @@ hl.on("hyprland.start", function()
         hl.exec_cmd("swaybg -i $HOME/nextcloud/wallpaper/arch10.jpg -m fill")
         hl.exec_cmd("kanshi")
         hl.exec_cmd("nm-applet")
+        hl.exec_cmd("systemctl --user start hyprpolkitagent.service")
 end)
 
 -------------------------------

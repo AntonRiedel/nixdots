@@ -3,15 +3,12 @@
   inputs,
   lib,
   ...
-}:
-let
+}: let
   nixos = config.flake.modules.nixos;
   hm = config.flake.modules.homeManager;
-in
-{
+in {
   configurations.nixos.ruby.module = {
     imports = [
-
       inputs.home-manager.nixosModules.home-manager
 
       # hardware settings
@@ -20,9 +17,11 @@ in
       nixos.boot
       nixos.ruby-filesystem
       nixos.networkmanager
+      nixos.gui-packages
       nixos.audio
       nixos.bluetooth
       nixos.locale
+      nixos.fingerprint
 
       # nix settings
       nixos.nix-settings
