@@ -35,6 +35,7 @@ in {
       nixos.hyprland
       nixos.packages
       nixos.gaming
+      nixos.gui-packages
       nixos.dual-function-keys
       nixos.virtualization
       nixos.tailscale
